@@ -77,4 +77,24 @@ public class Gauss {
         }
     }
 
+    //IMPRIMIR ESTA COSA 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("Ingrese el número de ecuaciones: ");
+        int n = scanner.nextInt();
+
+        // Crear la matriz aumentada
+        double[][] matriz = new double[n][n + 1];
+
+        // Llenar la matriz por teclado
+        llenarMatriz(matriz, n);
+
+        // Imprimir la matriz
+        imprimirMatriz(matriz, n);
+
+        // Resolver el sistema
+        resolverSistema(matriz, n);
+    }
 }
