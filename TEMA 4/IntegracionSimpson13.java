@@ -154,6 +154,29 @@ class ResolvedorSimpson13 {
         }
         
         return (h / 3) * suma;
+    }// Clase para mostrar los resultados
+class SalidaResultadosSimpson13 {
+    public void mostrarResultado(double resultado) {
+        System.out.println("\nEl resultado de la integral es: " + resultado);
     }
+}
+
+// Clase principal
+public class IntegracionSimpson13 {
+    public static void main(String[] args) {
+        // Obtener datos
+        EntradaDatosSimpson13 entrada = new EntradaDatosSimpson13();
+        entrada.obtenerDatos();
+        
+        // Resolver la integral
+        ResolvedorSimpson13 resolvedor = new ResolvedorSimpson13();
+        double resultado = resolvedor.resolver(entrada);
+        
+        // Mostrar resultados
+        SalidaResultadosSimpson13 salida = new SalidaResultadosSimpson13();
+        salida.mostrarResultado(resultado);
+    }
+}
+
 }
 
