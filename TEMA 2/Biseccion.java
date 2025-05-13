@@ -12,4 +12,16 @@ public class Biseccion {
             System.out.println("No se puede aplicar el método.");
             return;
         }
+         while ((b - a) >= tolerancia) {
+            c = (a + b) / 2;
+            if (funcion(c) == 0.0)
+                break;
+            else if (funcion(c) * funcion(a) < 0)
+                b = c;
+            else
+                a = c;
+        }
+
+        System.out.println("La raíz aproximada es: " + (a + b) / 2);
+    }
 }
