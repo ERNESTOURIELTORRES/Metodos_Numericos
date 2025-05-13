@@ -11,3 +11,16 @@ public class ReglaFalsa {
             System.out.println("No se puede aplicar el método.");
             return;
         }
+         do {
+            c = a - (funcion(a) * (b - a)) / (funcion(b) - funcion(a));
+            if (funcion(c) == 0.0)
+                break;
+            else if (funcion(c) * funcion(a) < 0)
+                b = c;
+            else
+                a = c;
+        } while (Math.abs(funcion(c)) >= tolerancia);
+
+        System.out.println("La raíz aproximada es: " + c);
+    }
+}
