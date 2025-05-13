@@ -154,7 +154,10 @@ class ResolvedorSimpson13 {
         }
         
         return (h / 3) * suma;
-    }// Clase para mostrar los resultados
+    }
+}
+
+// Clase para mostrar los resultados
 class SalidaResultadosSimpson13 {
     public void mostrarResultado(double resultado) {
         System.out.println("\nEl resultado de la integral es: " + resultado);
@@ -177,6 +180,3 @@ public class IntegracionSimpson13 {
         salida.mostrarResultado(resultado);
     }
 }
-
-}
-
