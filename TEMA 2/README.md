@@ -67,7 +67,7 @@ Inicio
 Fin
 ```
 
-### Caso Práctico
+### Caso de Prueba
 
 
 Función: f(x) = x^3 - x - 2
@@ -83,3 +83,84 @@ Tolerancia: 0.0001
 Resultado esperado:
 Después de varias iteraciones, la raíz aproximada encontrada es:
 1.5214
+---
+
+# Método de la Regla Falsa
+
+---
+
+##  ¿En qué consiste?
+
+La **Regla Falsa** (o método de la **falsa posición**) es un método numérico para encontrar raíces de funciones continuas en un intervalo [a, b] donde ocurre un cambio de signo, es decir, **f(a)·f(b) < 0**. A diferencia del método de bisección, **la fórmula para la raíz no divide el intervalo por la mitad**, sino que calcula un punto donde se cruza la recta que une los extremos del intervalo (una especie de interpolación lineal).
+
+**c = a - [f(a) * (b - a)] / [f(b) - f(a)]**
+
+
+---
+
+## 🔢 Pasos del Método
+
+1. Verifica que la función sea continua en el intervalo [a, b] y que `f(a) * f(b) < 0`.
+2. Calcula el punto `c` usando la fórmula de la regla falsa.
+3. Evalúa `f(c)`:
+   - Si `f(c) = 0`, entonces `c` es la raíz exacta.
+   - Si `f(a) * f(c) < 0`, actualiza `b = c`.
+   - Si `f(b) * f(c) < 0`, actualiza `a = c`.
+4. Repite el proceso hasta que el valor absoluto de `f(c)` sea menor a una tolerancia establecida.
+5. El valor de `c` será la **raíz aproximada**.
+
+---
+
+## 🧠 Pseudocódigo del Método de la Regla Falsa
+
+```plaintext
+Inicio
+  Definir función f(x):
+    f(x) = x^3 - x - 2
+
+  a ← 1
+  b ← 2
+  tolerancia ← 0.0001
+
+  Si f(a) * f(b) ≥ 0 Entonces
+    Mostrar "No se puede aplicar el método."
+    Terminar
+
+  Repetir
+    c ← a - [f(a) * (b - a)] / [f(b) - f(a)]
+
+    Si f(c) = 0 Entonces
+      Salir del ciclo (raíz exacta encontrada)
+    Sino si f(c) * f(a) < 0 Entonces
+      b ← c
+    Sino
+      a ← c
+
+  Mientras |f(c)| ≥ tolerancia
+
+  Mostrar "La raíz aproximada es: ", c
+Fin
+
+```
+
+---
+
+### Caso de prueba 
+Función: f(x) = x^3 - x - 2
+
+Intervalo inicial:
+a = 1
+b = 2
+
+Evaluaciones iniciales:
+f(1) = -2
+f(2) = 4
+f(1) * f(2) = -8 < 0 → Hay cambio de signo → ✅ Se puede aplicar la Regla Falsa.
+
+Tolerancia:
+0.0001
+
+Resultado esperado:
+Después de varias iteraciones, la raíz aproximada encontrada es:
+1.5214
+---
