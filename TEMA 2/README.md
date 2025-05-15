@@ -142,6 +142,7 @@ Inicio
 Fin
 
 ```
+---
 
 
 
@@ -162,4 +163,6 @@ Tolerancia:
 
 Resultado esperado:
 Después de varias iteraciones, la raíz aproximada encontrada es:
-1.5214
+1.5214 
+
+
