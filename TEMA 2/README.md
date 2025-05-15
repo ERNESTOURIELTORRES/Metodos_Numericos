@@ -245,3 +245,79 @@ Resultado esperado:
 Después de varias iteraciones, la raíz aproximada encontrada es:
 1.5214
 
+# Método de Newton-Raphson
+
+---
+
+##  ¿En qué consiste?
+
+El **método de Newton-Raphson** es una técnica iterativa para encontrar raíces de funciones reales. Utiliza tanto la función como su derivada para aproximar la raíz de manera rápida y eficiente.
+
+**x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}**
+
+---
+
+##  Pasos del Método
+
+1. Elige una aproximación inicial \( x_0 \).
+2. Calcula la siguiente aproximación usando la fórmula:
+   \[
+   x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+   \]
+3. Repite el paso anterior hasta que:
+   \[
+   |x_{n+1} - x_n| < \text{tolerancia}
+   \]
+4. El valor de \( x_n \) se considera la raíz aproximada.
+
+ **Nota:** Este método requiere que la derivada \( f'(x) \) no sea cero en el punto de evaluación.
+
+
+---
+
+##  Pseudocódigo del Método de la Regla Falsa
+
+```plaintext
+Inicio
+  Definir función f(x):
+    f(x) = x^3 - x - 2
+
+  Definir derivada f'(x):
+    f'(x) = 3x^2 - 1
+
+  x ← 1.5
+  tolerancia ← 0.0001
+
+  Repetir
+    h ← f(x) / f'(x)
+    x ← x - h
+  Hasta que |h| < tolerancia
+
+  Mostrar "La raíz aproximada es: ", x
+Fin
+
+```
+---
+
+
+
+## Caso de prueba 
+Función: f(x) = x^3 - x - 2
+Derivada: f'(x) = 3x^2 - 1
+
+Valor inicial:
+x = 1.5
+
+Tolerancia:
+0.0001
+
+Iteraciones:
+h₀ = f(1.5)/f'(1.5) = (3.375 - 1.5 - 2) / (3*(1.5)^2 - 1)
+   ≈ -0.142857
+x₁ = 1.5 - h₀ ≈ 1.6429
+
+Continuar iterando hasta que |h| < 0.0001...
+
+Resultado esperado:
+Después de varias iteraciones, la raíz aproximada encontrada es:
+1.5214
