@@ -34,6 +34,35 @@ Luego, se repite un proceso de división del intervalo hasta que se aproxima suf
    - Si `f(a) * f(m) < 0`: la raíz está entre `a` y `m` → actualiza `b = m`.
    - Si `f(m) * f(b) < 0`: la raíz está entre `m` y `b` → actualiza `a = m`.
 4. **Repite** el proceso hasta que la **diferencia entre `a` y `b` sea menor a una tolerancia** deseada (es decir, hasta que la aproximación sea suficientemente precisa).
+---
 
+##  Pseudocódigo del Método de Bisección
+
+```plaintext
+Inicio
+  Definir función f(x):
+    f(x) = x^3 - x - 2
+
+  a ← 1
+  b ← 2
+  tolerancia ← 0.0001
+
+  Si f(a) * f(b) ≥ 0 Entonces
+    Mostrar "No se puede aplicar el método."
+    Terminar
+
+  Mientras (b - a) ≥ tolerancia hacer
+    c ← (a + b) / 2
+
+    Si f(c) = 0 Entonces
+      Salir del ciclo (la raíz exacta fue encontrada)
+    Sino si f(c) * f(a) < 0 Entonces
+      b ← c
+    Sino
+      a ← c
+  Fin Mientras
+
+  Mostrar "La raíz aproximada es: ", (a + b) / 2
+Fin
 
 
