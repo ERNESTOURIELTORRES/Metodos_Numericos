@@ -36,9 +36,9 @@ Luego, se repite un proceso de división del intervalo hasta que se aproxima suf
 4. **Repite** el proceso hasta que la **diferencia entre `a` y `b` sea menor a una tolerancia** deseada (es decir, hasta que la aproximación sea suficientemente precisa).
 ---
 
+
 ##  Pseudocódigo del Método de Bisección
 
-```plaintext
 Inicio
   Definir función f(x):
     f(x) = x^3 - x - 2
@@ -65,10 +65,9 @@ Inicio
   Mostrar "La raíz aproximada es: ", (a + b) / 2
 Fin
 ---
-## 🧪 Caso de Prueba
-
-### Función:
+##  Caso de prueba
 ```plaintext
+
 f(x) = x^3 - x - 2
 
 a = 1
@@ -83,4 +82,9 @@ f(1) * f(2) = -8 < 0 → Hay cambio de signo → Se puede aplicar el método de 
 
 Después de varias iteraciones, la raíz aproximada encontrada es:
 1.5214
+
+
+
+
+
 
