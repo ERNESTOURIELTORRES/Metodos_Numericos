@@ -80,7 +80,7 @@ f(1) * f(2) = -8 < 0 → Hay cambio de signo → Se puede aplicar el método de 
 
 Tolerancia: 0.0001
 
-Resultado esperado:
+### Resultado esperado
 Después de varias iteraciones, la raíz aproximada encontrada es:
 1.5214
 
@@ -161,7 +161,7 @@ f(1) * f(2) = -8 < 0 → Hay cambio de signo →  Se puede aplicar la Regla Fals
 Tolerancia:
 0.0001
 
-Resultado esperado:
+### Resultado esperado
 Después de varias iteraciones, la raíz aproximada encontrada es:
 1.5214 
 
@@ -241,7 +241,7 @@ x₂ = ∛(1.518 + 2) ≈ 1.5212
 ...
 Se detiene cuando |xₙ₊₁ - xₙ| < 0.0001
 
-Resultado esperado:
+### Resultado esperado
 Después de varias iteraciones, la raíz aproximada encontrada es:
 1.5214
 
@@ -318,6 +318,79 @@ x₁ = 1.5 - h₀ ≈ 1.6429
 
 Continuar iterando hasta que |h| < 0.0001...
 
-Resultado esperado:
+### Resultado esperado
+Después de varias iteraciones, la raíz aproximada encontrada es:
+1.5214
+
+# Método de Secante 
+
+---
+
+##  ¿En qué consiste?
+
+El **método de la secante** es una técnica numérica para encontrar una raíz de una función. Es similar al método de Newton-Raphson, pero en lugar de utilizar la derivada, aproxima esta mediante una secante entre dos puntos.
+
+**x_{n+1} = x_n - f(x_n) \cdot \frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}**
+
+---
+
+##  Pasos del Método
+
+1. Elige dos valores iniciales \( x_0 \) y \( x_1 \).
+2. Calcula el siguiente valor con la fórmula:
+   \[
+   x_2 = x_1 - f(x_1) \cdot \frac{x_1 - x_0}{f(x_1) - f(x_0)}
+   \]
+3. Actualiza:
+   - \( x_0 \leftarrow x_1 \)
+   - \( x_1 \leftarrow x_2 \)
+4. Repite hasta que \( |f(x_n)| < \text{tolerancia} \).
+
+---
+
+##  Pseudocódigo del Método de la Regla Falsa
+
+```plaintext
+Inicio
+  Definir función f(x):
+    f(x) = x^3 - x - 2
+
+  x0 ← 1
+  x1 ← 2
+  tolerancia ← 0.0001
+
+  Repetir
+    x2 ← x1 - f(x1) * (x1 - x0) / (f(x1) - f(x0))
+    x0 ← x1
+    x1 ← x2
+  Hasta que |f(x2)| < tolerancia
+
+  Mostrar "La raíz aproximada es: ", x2
+Fin
+
+```
+---
+
+
+
+## Caso de prueba 
+Función: f(x) = x^3 - x - 2
+
+Valores iniciales:
+x0 = 1
+x1 = 2
+
+f(1) = -2
+f(2) = 4
+
+Tolerancia:
+0.0001
+
+Primera iteración:
+x2 = 2 - 4 * (2 - 1) / (4 - (-2)) = 2 - 4 * 1 / 6 = 2 - 0.6667 ≈ 1.3333
+
+Se continúa iterando hasta que |f(x2)| < 0.0001...
+
+### Resultado esperado
 Después de varias iteraciones, la raíz aproximada encontrada es:
 1.5214
