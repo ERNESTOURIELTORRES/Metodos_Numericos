@@ -64,5 +64,23 @@ Inicio
 
   Mostrar "La raíz aproximada es: ", (a + b) / 2
 Fin
+---
+## 🧪 Caso de Prueba
 
+### Función:
+```plaintext
+f(x) = x^3 - x - 2
+
+a = 1
+b = 2
+
+f(1) = -2
+f(2) = 4
+f(1) * f(2) = -8 < 0 → Hay cambio de signo → Se puede aplicar el método de bisección.
+
+
+0.0001
+
+Después de varias iteraciones, la raíz aproximada encontrada es:
+1.5214
 
