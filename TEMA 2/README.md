@@ -65,8 +65,9 @@ Inicio
 
   Mostrar "La raíz aproximada es: ", (a + b) / 2
 Fin
+```
 
-## Caso practico
+### Caso Práctico
 
 
 Función: f(x) = x^3 - x - 2
