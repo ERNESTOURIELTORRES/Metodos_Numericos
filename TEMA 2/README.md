@@ -1,11 +1,11 @@
 # METODOS NUMERICOS
 
 En este readme veremos los metodos siguientes : 
-Método de bisección 
-Método de la Regla Falsa
-Método de Punto Fijo
-Método de Newton-Raphson
-Método de Secante 
+- Método de bisección 
+- Método de la Regla Falsa
+- Método de Punto Fijo
+- Método de Newton-Raphson
+- Método de Secante 
 
 
 
