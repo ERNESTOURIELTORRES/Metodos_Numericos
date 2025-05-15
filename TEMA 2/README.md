@@ -166,3 +166,82 @@ Después de varias iteraciones, la raíz aproximada encontrada es:
 1.5214 
 
 
+
+# Método punto fijo
+
+---
+
+##  ¿En qué consiste?
+
+El **método del Punto Fijo** es una técnica iterativa para encontrar raíces de ecuaciones no lineales. Se basa en reescribir la ecuación `f(x) = 0` en la forma `x = g(x)` y luego utilizar esa función `g(x)` para generar una sucesión que converge a una raíz de la ecuación original.
+
+**\[x_{n+1} = g(x_n)\]**
+
+La sucesión de valores \( x_0, x_1, x_2, \ldots \) se genera aplicando la función `g(x)` repetidamente.
+
+---
+
+##  Pasos del Método
+
+1. Despeja la ecuación `f(x) = 0` en la forma `x = g(x)`.
+2. Elige una aproximación inicial `x₀`.
+3. Calcula `x₁ = g(x₀)`, `x₂ = g(x₁)`, etc.
+4. Repite el proceso hasta que la diferencia entre dos iteraciones consecutivas sea menor a una **tolerancia** establecida:  
+   \[
+   |x_{n+1} - x_n| < \text{tolerancia}
+   \]
+5. El valor de `xₙ` se considera la **raíz aproximada**.
+
+**Nota:** Para que el método funcione, la función `g(x)` debe cumplir ciertas condiciones de convergencia (por ejemplo, que \( |g'(x)| < 1 \)).
+
+---
+
+##  Pseudocódigo del Método de la Regla Falsa
+
+```plaintext
+Inicio
+  Definir función g(x):
+    g(x) = ∛(x + 2)
+
+  x ← 1.5
+  tolerancia ← 0.0001
+
+  Repetir
+    x1 ← g(x)
+    
+    Si |x1 - x| < tolerancia Entonces
+      Salir del ciclo
+    FinSi
+
+    x ← x1
+  Hasta que se cumpla la condición
+
+  Mostrar "La raíz aproximada es: ", x1
+Fin
+
+```
+---
+
+
+
+## Caso de prueba 
+Función original: f(x) = x^3 - x - 2
+
+Despeje usado: x = ∛(x + 2) → g(x)
+
+Valor inicial:
+x = 1.5
+
+Tolerancia:
+0.0001
+
+Iteraciones:
+x₁ = ∛(1.5 + 2) = ∛(3.5) ≈ 1.518
+x₂ = ∛(1.518 + 2) ≈ 1.5212
+...
+Se detiene cuando |xₙ₊₁ - xₙ| < 0.0001
+
+Resultado esperado:
+Después de varias iteraciones, la raíz aproximada encontrada es:
+1.5214
+
