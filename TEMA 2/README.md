@@ -67,7 +67,7 @@ Inicio
 Fin
 ```
 
-### Caso de Prueba
+## Caso de Prueba
 
 
 Función: f(x) = x^3 - x - 2
@@ -83,7 +83,7 @@ Tolerancia: 0.0001
 Resultado esperado:
 Después de varias iteraciones, la raíz aproximada encontrada es:
 1.5214
----
+
 
 # Método de la Regla Falsa
 
@@ -98,7 +98,7 @@ La **Regla Falsa** (o método de la **falsa posición**) es un método numérico
 
 ---
 
-## 🔢 Pasos del Método
+##  Pasos del Método
 
 1. Verifica que la función sea continua en el intervalo [a, b] y que `f(a) * f(b) < 0`.
 2. Calcula el punto `c` usando la fórmula de la regla falsa.
@@ -111,7 +111,7 @@ La **Regla Falsa** (o método de la **falsa posición**) es un método numérico
 
 ---
 
-## 🧠 Pseudocódigo del Método de la Regla Falsa
+##  Pseudocódigo del Método de la Regla Falsa
 
 ```plaintext
 Inicio
@@ -143,9 +143,9 @@ Fin
 
 ```
 
----
 
-### Caso de prueba 
+
+## Caso de prueba 
 Función: f(x) = x^3 - x - 2
 
 Intervalo inicial:
@@ -155,7 +155,7 @@ b = 2
 Evaluaciones iniciales:
 f(1) = -2
 f(2) = 4
-f(1) * f(2) = -8 < 0 → Hay cambio de signo → ✅ Se puede aplicar la Regla Falsa.
+f(1) * f(2) = -8 < 0 → Hay cambio de signo →  Se puede aplicar la Regla Falsa.
 
 Tolerancia:
 0.0001
@@ -163,4 +163,3 @@ Tolerancia:
 Resultado esperado:
 Después de varias iteraciones, la raíz aproximada encontrada es:
 1.5214
----
