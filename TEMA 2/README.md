@@ -39,7 +39,7 @@ Luego, se repite un proceso de división del intervalo hasta que se aproxima suf
 
 ## Pseudocódigo del Método de Bisección
 
-``plaintext
+```plaintext
 Inicio
   Definir función f(x):
     f(x) = x^3 - x - 2
