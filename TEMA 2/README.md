@@ -1,3 +1,14 @@
+# METODOS NUMERICOS
+
+En este readme veremos los metodos siguientes : 
+Método de bisección 
+Método de la Regla Falsa
+Método de Punto Fijo
+Método de Newton-Raphson
+Método de Secante 
+
+
+
 # Método de Bisección
 
 El **Método de Bisección** es una técnica numérica usada para encontrar **raíces de ecuaciones no lineales**. Es uno de los métodos más simples y confiables, siempre que se cumplan ciertas condiciones.
