@@ -12,7 +12,7 @@ Este repositorio contiene apuntes y conceptos clave sobre los **errores en cálc
 - Al introducir números muy pequeños (por ejemplo, `0.0000000000000000000000001`), Excel redondea automáticamente a `0`.
 - Esto se debe a las **limitaciones de precisión decimal** del programa.
 
-#### 📌 En Java
+#### En Java
 - Cada tipo de dato tiene un límite. Por ejemplo:
   - `byte`: puede almacenar de **-128 a 127**.
   - Al intentar almacenar un valor fuera de este rango, se produce un **desbordamiento**.
