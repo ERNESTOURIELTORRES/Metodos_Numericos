@@ -105,7 +105,7 @@ x3 = 2.0000
 
 # Método de Gauss-Jordan 
 
-El método de Gauss-Jordan es una extensión del método de Gauss que permite resolver sistemas de ecuaciones lineales transformando la matriz aumentada en una matriz identidad. 
+El **método de Gauss-Jordan** es una extensión del método de Gauss que permite **resolver sistemas de ecuaciones lineales** transformando la matriz aumentada en una matriz identidad. 
 ---
 
 ##  ¿En qué consiste?
