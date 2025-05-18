@@ -254,24 +254,24 @@ Retornar x
 ## Caso de Prueba
 
 
-4x +  y +  z =  7
- x + 3y +  z =  8
- x +  y + 5z =  9
+1. 4x +  y +  z =  7
+2. x + 3y +  z =  8
+3. x +  y + 5z =  9
 
 - Matriz A:
 
 
-[ 4  1  1 ]
-[ 1  3  1 ]
-[ 1  1  5 ]
+- [ 4  1  1 ]
+- [ 1  3  1 ]
+- [ 1  1  5 ]
 
 
 - Vector B:
 
 
-[ 7 ]
-[ 8 ]
-[ 9 ]
+- [ 7 ]
+- [ 8 ]
+- [ 9 ]
 
 
 - Parametros :
