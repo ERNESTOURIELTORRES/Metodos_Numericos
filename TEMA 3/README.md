@@ -206,7 +206,13 @@ Dado un sistema con 𝑛 ecuaciones y 𝑛 incógnitas, la fórmula general para
 ---
 
 ##  Pasos del Método
-
+1. Inicializar el vector solución `x` con ceros (o un valor inicial).
+2. Establecer una **tolerancia `tol`** y un **máximo de iteraciones `maxIter`**.
+3. Repetir hasta alcanzar la tolerancia o el número máximo de iteraciones:
+    - Para cada fila `i`, calcular el nuevo valor de `x[i]`.
+    - Usar los valores más recientes disponibles.
+4. Comparar el cambio entre las iteraciones actuales y anteriores.
+5. Si el cambio es menor que `tol`, se ha alcanzado la convergencia.
 
 ---
 
@@ -214,15 +220,68 @@ Dado un sistema con 𝑛 ecuaciones y 𝑛 incógnitas, la fórmula general para
 ## Pseudocódigo del Método de Bisección
 
 ```plaintext
+Entrada: matriz A[n][n], vector b[n], tolerancia tol, máximo de iteraciones maxIter
+Salida: vector x[n] solución del sistema
 
+Inicializar x[n] con ceros
+Inicializar xOld[n]
+
+Para iter = 0 hasta maxIter - 1:
+    Copiar x en xOld
+
+    Para i = 0 hasta n-1:
+        sum = 0
+        Para j = 0 hasta n-1:
+            Si j ≠ i:
+                sum += A[i][j] * x[j]
+        x[i] = (b[i] - sum) / A[i][i]
+
+    maxDiff = 0
+    Para i = 0 hasta n-1:
+        maxDiff = máximo entre maxDiff y |x[i] - xOld[i]|
+
+    Si maxDiff < tol:
+        Imprimir "Convergencia alcanzada en iter + 1 iteraciones"
+        Salir del bucle
+
+Retornar x
 
 ```
+---
 
 ## Caso de Prueba
+
+4x +  y +  z =  7
+ x + 3y +  z =  8
+ x +  y + 5z =  9
+
+- Matriz A:
+
+[ 4  1  1 ]
+[ 1  3  1 ]
+[ 1  1  5 ]
+
+
+- Vector B:
+
+[ 7 ]
+[ 8 ]
+[ 9 ]
+
+
+- Parametros :
+
+Tolerancia: 1e-6
+
+Iteraciones máximas: 100
 
 
 
 
 
 ### Resultado esperado
+
+x ≈ 1.000000
+y ≈ 2.000000
+z ≈ 1.000000
 
