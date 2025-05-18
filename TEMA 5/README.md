@@ -35,7 +35,7 @@ Consiste en trazar la recta que une los dos puntos conocidos y luego usar la ecu
 4. Devolver el valor interpolado (y).
 
 
-## Pseudocódigo del Método de Gauss
+## Pseudocódigo del Interpolación Lineal
 
 ```plaintext
 ## ⚙️ Pseudocódigo
@@ -90,10 +90,13 @@ La **interpolación de Newton** es un método para construir un polinomio que pa
 
 ##  ¿En qué consiste?
 
-1. **Calcular la tabla de diferencias divididas** \(f[x_i,\dots,x_{i+k}]\).  
-2. **Construir el polinomio** en forma de Newton:
+1. **Calcular la tabla de diferencias divididas** \(f[x_i,\dots,x_{i+k}]\).
 
+   ![divided_differences_formula](https://github.com/user-attachments/assets/b4875a1a-9553-4f60-9305-a84e1728d33c)
 
+3. **Construir el polinomio** en forma de Newton:
+
+   ![newton_polynomial_formula](https://github.com/user-attachments/assets/70200795-7ff3-418b-9cb4-7a7fa0a3c9d1)
 
 
 
@@ -155,7 +158,7 @@ La **interpolación de Newton** es un método para construir un polinomio que pa
    - El valor `resultado` final es \(Pₙ(xEval)\).
 
 
-## Pseudocódigo del Método de Gauss
+## Pseudocódigo del Método de Interpolación Newton 
 
 ```plaintext
 ## ⚙️ Pseudocódigo
