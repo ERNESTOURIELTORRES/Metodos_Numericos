@@ -22,27 +22,13 @@ El **método de Gauss** o **eliminación gaussiana** es una técnica algebraica 
 
 Un sistema de ecuaciones lineales con \( n \) incógnitas puede escribirse como:
 
-\[
-\begin{aligned}
-a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &= b_1 \\
-a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n &= b_2 \\
-\vdots \\
-a_{n1}x_1 + a_{n2}x_2 + \dots + a_{nn}x_n &= b_n \\
-\end{aligned}
-\]
 
 
 
 Esto se representa como una **matriz aumentada**:
 
-\[
-\begin{bmatrix}
-a_{11} & a_{12} & \dots & a_{1n} & | & b_1 \\
-a_{21} & a_{22} & \dots & a_{2n} & | & b_2 \\
-\vdots & \vdots &        & \vdots & | & \vdots \\
-a_{n1} & a_{n2} & \dots & a_{nn} & | & b_n \\
-\end{bmatrix}
-\]
+![Método de Gauss](TEMA 3/gaus.png)
+
 
 ---
 
