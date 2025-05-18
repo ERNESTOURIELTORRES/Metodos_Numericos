@@ -202,6 +202,8 @@ Consiste en resolver iterativamente cada una de las incógnitas del sistema util
 
 Dado un sistema con 𝑛 ecuaciones y 𝑛 incógnitas, la fórmula general para actualizar la 𝑖-ésima variable en la 𝑘-ésima iteración es:
 
+![Captura de pantalla 2025-05-18 102640](https://github.com/user-attachments/assets/d61363fe-0bb3-4ffd-bb69-ef53edb4a0c1)
+
 
 ---
 
