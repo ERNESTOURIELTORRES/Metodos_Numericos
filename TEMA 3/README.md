@@ -292,3 +292,130 @@ x ≈ 1.000000
 y ≈ 2.000000
 z ≈ 1.000000
 
+# Método de Jacobi 
+El **método de Jacobi** es un método iterativo utilizado para resolver sistemas de ecuaciones lineales de la forma:
+
+A · x = b
+
+
+Donde:
+- `A` es la matriz de coeficientes.
+- `x` es el vector de incógnitas.
+- `b` es el vector de términos independientes.
+
+Es especialmente útil cuando la matriz `A` es **diagonalmente dominante** o **simétrica definida positiva**, ya que esto garantiza la convergencia del método.
+
+
+---
+
+##  ¿En qué consiste?
+
+El método consiste en calcular iterativamente los valores de las incógnitas utilizando únicamente los valores de la iteración anterior. A diferencia del método de Gauss-Seidel, **Jacobi no actualiza los valores intermedios hasta terminar toda la iteración**.
+
+![Captura de pantalla 2025-05-18 102640](https://github.com/user-attachments/assets/d61363fe-0bb3-4ffd-bb69-ef53edb4a0c1)
+
+
+---
+
+##  Pasos del Método
+
+1. Ingresar la matriz `A`, el vector `b` y un valor inicial para `x`.
+2. Definir una **tolerancia** y un **número máximo de iteraciones**.
+3. Repetir el siguiente proceso hasta que:
+    - Se alcance la tolerancia deseada, o
+    - Se supere el número máximo de iteraciones.
+4. Para cada componente `x[i]`, calcular el nuevo valor `xNew[i]` sin modificar `x`.
+5. Comprobar si la diferencia entre `xNew` y `x` es menor que la tolerancia para todas las variables.
+6. Si se alcanza la tolerancia, el proceso ha convergido.
+
+---
+
+
+## Pseudocódigo del Método de Bisección
+
+```plaintext
+Entrada: matriz A[n][n], vector b[n], vector inicial x[n], tolerancia tol, máximo de iteraciones maxIter
+Salida: vector x[n] solución aproximada
+
+Inicializar vector xNew[n]
+iteraciones = 0
+
+Mientras iteraciones < maxIter:
+    iteraciones += 1
+
+    Para i = 0 hasta n-1:
+        suma = 0
+        Para j = 0 hasta n-1:
+            Si j ≠ i:
+                suma += A[i][j] * x[j]
+        xNew[i] = (b[i] - suma) / A[i][i]
+
+    esConvergente = true
+    Para i = 0 hasta n-1:
+        Si |xNew[i] - x[i]| > tol:
+            esConvergente = false
+            Romper
+
+    Copiar xNew en x
+
+    Si esConvergente:
+        Imprimir "Convergencia alcanzada en iteraciones"
+        Salir del bucle
+
+Si no esConvergente:
+    Imprimir "No se alcanzó convergencia"
+
+Retornar x
+
+```
+---
+
+## Caso de Prueba
+
+
+1. 4x +  y +  z =  7
+2. x + 3y +  z =  8
+3. x +  y + 5z =  9
+
+
+
+Matriz A:
+
+
+[ 4  1  1 ]
+[ 1  3  1 ]
+[ 1  1  5 ]
+
+
+
+ Vector B:
+
+
+[ 7 ]
+[ 8 ]
+[ 9 ]
+
+
+Vector Inicial :
+
+[ 0 ]
+[ 0 ]
+[ 0 ]
+
+
+Tolerancia: 1e-6
+Iteraciones máximas: 100
+
+
+
+
+
+
+
+
+### Resultado esperado
+
+x ≈ 1.000000
+y ≈ 2.000000
+z ≈ 1.000000
+
