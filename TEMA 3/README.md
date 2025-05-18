@@ -176,3 +176,51 @@ x = 5
 y = 3  
 z = -2
 
+# Método de Gauss Seidel
+
+El método de Gauss-Seidel es un método iterativo utilizado para resolver sistemas de ecuaciones lineales de la forma:
+
+- 𝐴⋅𝑥=𝑏
+
+donde:
+
+- 𝐴 es una matriz de coeficientes.
+
+- 𝑥 es el vector de incógnitas.
+
+- 𝑏 es el vector de resultados.
+
+Este método es útil especialmente cuando el sistema es grande y disperso, y puede converger rápidamente si la matriz cumple ciertas condiciones (como ser diagonalmente dominante).
+---
+
+##  ¿En qué consiste?
+
+Consiste en resolver iterativamente cada una de las incógnitas del sistema utilizando las últimas actualizaciones disponibles en cada paso, es decir, se va reemplazando cada componente de 
+𝑥 tan pronto como se calcula.
+
+**[A | b]  →  [I | x]**
+
+
+---
+
+##  Pasos del Método
+
+
+---
+
+
+## Pseudocódigo del Método de Bisección
+
+```plaintext
+
+
+```
+
+## Caso de Prueba
+
+
+
+
+
+### Resultado esperado
+
