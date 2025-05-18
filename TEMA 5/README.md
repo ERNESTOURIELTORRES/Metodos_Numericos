@@ -79,3 +79,138 @@ Interpolar entre los puntos conocidos:
 
 
 
+# Interpolación Newton 
+
+
+La **interpolación de Newton** es un método para construir un polinomio que pasa exactamente por un conjunto de puntos \(\{(x_i, y_i)\}_{i=0}^n\). Utiliza las **diferencias divididas** para obtener los coeficientes del polinomio de forma eficiente.
+
+
+
+---
+
+##  ¿En qué consiste?
+
+1. **Calcular la tabla de diferencias divididas** \(f[x_i,\dots,x_{i+k}]\).  
+2. **Construir el polinomio** en forma de Newton:
+
+
+
+
+![Captura de pantalla 2025-05-18 100122](https://github.com/user-attachments/assets/f9d66cff-a4dc-48a4-be91-c4a805ec8f9c)
+
+
+![gaus](https://github.com/user-attachments/assets/7133d94f-3739-4f5d-b835-b47dc48e64f4)
+
+
+3. **Evaluar** \(P_n(x)\) en el punto deseado.
+
+
+---
+
+## Pasos a seguir
+
+1. **Reunir los datos**  
+   - Vectores de puntos:  
+     ```text
+     x = [x₀, x₁, …, xₙ]
+     y = [y₀, y₁, …, yₙ]
+     ```
+
+2. **Inicializar la tabla de diferencias divididas**  
+   - Crear matriz `dd` de tamaño `(n+1) × (n+1)`.  
+   - Rellenar la primera columna con los valores de `y`:
+     ```text
+     Para i = 0 hasta n:
+         dd[i][0] = y[i]
+     ```
+
+3. **Calcular las diferencias divididas**  
+   - Para cada orden `j` desde 1 hasta `n`:
+     ```text
+     Para j = 1 hasta n:
+         Para i = 0 hasta n - j:
+             dd[i][j] = (dd[i+1][j-1] - dd[i][j-1]) / (x[i+j] - x[i])
+     ```
+
+4. **Construir el polinomio de Newton**  
+   - La forma general es:
+     ```text
+     Pₙ(x) = dd[0][0]
+           + dd[0][1]·(x - x₀)
+           + dd[0][2]·(x - x₀)(x - x₁)
+           + … 
+           + dd[0][n]·(x - x₀)…(x - xₙ₋₁)
+     ```
+
+5. **Evaluar el polinomio en un punto**  
+   - Dado `xEval`, inicializar:
+     ```text
+     resultado = dd[0][0]
+     producto  = 1
+     ```
+   - Para cada `k` de 1 a `n`:
+     ```text
+     producto  = producto * (xEval - x[k-1])
+     resultado = resultado + dd[0][k] * producto
+     ```
+
+6. **Obtener la interpolación**  
+   - El valor `resultado` final es \(Pₙ(xEval)\).
+
+
+## Pseudocódigo del Método de Gauss
+
+```plaintext
+## ⚙️ Pseudocódigo
+
+```plaintext
+Función NewtonInterpolation(x[0..n], y[0..n], xEval):
+    n = longitud(x) - 1
+    // 1. Inicializar diferencias divididas
+    Crear dd[0..n][0..n]
+    Para i = 0 hasta n:
+        dd[i][0] = y[i]
+
+    // 2. Calcular diferencias divididas
+    Para j = 1 hasta n:
+        Para i = 0 hasta n - j:
+            dd[i][j] = (dd[i+1][j-1] - dd[i][j-1]) / (x[i+j] - x[i])
+
+    // 3. Evaluar el polinomio en xEval
+    resultado = dd[0][0]
+    producto  = 1
+    Para k = 1 hasta n:
+        producto  = producto * (xEval - x[k-1])
+        resultado = resultado + dd[0][k] * producto
+
+    Retornar resultado
+```
+
+## Caso de Prueba
+
+x = [9, 12, 15]
+y = [15, 21, 18]
+xEval = 13.5
+
+
+
+- dd[0][0] = 15, dd[1][0] = 21, dd[2][0] = 18
+
+- dd[0][1] = (21 - 15)/(12-9) = 2
+
+- dd[1][1] = (18 - 21)/(15-12) = -1
+
+- dd[0][2] = (-1 - 2)/(15-9) = -0.5
+
+resultado = dd[0][0] = 15
+producto = 1
+k=1: producto *= (13.5 - 9) = 4.5
+      resultado += 2 * 4.5 = 15 + 9 = 24
+k=2: producto *= (13.5 - 12) = 4.5 * 1.5 = 6.75
+      resultado += (-0.5) * 6.75 = 24 - 3.375 = 20.625
+
+
+### Resultado esperado
+Valor interpolado en x = 13.5 es: 20.625
+
+
