@@ -328,3 +328,117 @@ n    = 3
 - Coeficiente de correlación r ≈ 0.9818
 - Interpretación: Relación positiva fuerte
 
+# Método Minimos Cuadrados 
+
+El **método de mínimos cuadrados** es una técnica estadística que ajusta una recta y = a + b x a un conjunto de datos \(\{(x_i, y_i)\}_{i=1}^n\) de modo que la suma de los cuadrados de las distancias verticales entre los puntos y la recta sea mínima.
+
+
+---
+
+##  ¿En qué consiste?
+
+1. Reunir los pares de datos \((x_i, y_i)\).  
+2. Suponer un modelo lineal \(y = a + b x\).  
+3. Encontrar los coeficientes \(a\) (ordenada al origen) y \(b\) (pendiente) que minimicen  
+   S(a,b) = ∑(yᵢ – (a + b xᵢ))²
+4. Resolver las ecuaciones normales para obtener \(a\) y \(b\).
+
+
+
+
+
+
+---
+
+## Pasos a seguir
+1. **Reunir datos**  
+   - Vectores x[1..n], y[1..n].  
+2. **Calcular sumatorias**  
+   ```text
+   sum_x  = Σ x_i
+   sum_y  = Σ y_i
+   sum_x2 = Σ x_i^2
+   sum_xy = Σ x_i * y_i
+
+   Calcular pendiente 
+𝑏 usando la fórmula de arriba.
+
+Calcular intercepto 
+𝑎
+
+Formar la ecuación de regresión:
+
+ŷ=𝑎+𝑏𝑥
+
+## Pseudocódigo del Método Minimos Cuadrados
+
+
+
+```plaintext
+Función AjusteLinealMinimosCuadrados(x[1..n], y[1..n]):
+    // 1. Inicializar sumas
+    sum_x  ← 0
+    sum_y  ← 0
+    sum_x2 ← 0
+    sum_xy ← 0
+
+    // 2. Acumular valores
+    Para i = 1 hasta n:
+        sum_x  ← sum_x  + x[i]
+        sum_y  ← sum_y  + y[i]
+        sum_x2 ← sum_x2 + x[i]^2
+        sum_xy ← sum_xy + x[i]*y[i]
+
+    // 3. Calcular coeficientes
+    b ← (n*sum_xy - sum_x*sum_y) / (n*sum_x2 - sum_x^2)
+    a ← (sum_y - b*sum_x) / n
+
+    Retornar (a, b)
+```
+
+## Caso de Prueba
+
+| $i$ | $x_i$ | $y_i$ |
+| :-: | :---: | :---: |
+|  1  |   1   |   2   |
+|  2  |   2   |  2.8  |
+|  3  |   3   |  3.6  |
+|  4  |   4   |  4.5  |
+
+
+
+
+
+
+
+
+```plaintext
+
+n    = 4
+Σx   = 1 + 2 + 3 + 4 = 10
+Σy   = 2 + 2.8 + 3.6 + 4.5 = 12.9
+Σx²  = 1 + 4 + 9 + 16 = 30
+Σxy  = 1*2 + 2*2.8 + 3*3.6 + 4*4.5 = 2 + 5.6 + 10.8 + 18 = 36.4
+
+
+b = (4*36.4 - 10*12.9) / (4*30 - 10^2)
+  = (145.6 - 129) / (120 - 100)
+  = 16.6 / 20
+  = 0.83
+
+a = (12.9 - 0.83*10) / 4
+  = (12.9 - 8.3) / 4
+  = 4.6 / 4
+  = 1.15
+
+
+ŷ = 1.15 + 0.83·x
+
+
+
+```
+
+### Resultado esperado
+La recta de regresión es: y = 1.1500 + 0.8300 x
+
+
