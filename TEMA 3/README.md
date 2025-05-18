@@ -192,6 +192,7 @@ donde:
 - 𝑏 es el vector de resultados.
 
 Este método es útil especialmente cuando el sistema es grande y disperso, y puede converger rápidamente si la matriz cumple ciertas condiciones (como ser diagonalmente dominante).
+
 ---
 
 ##  ¿En qué consiste?
@@ -199,7 +200,7 @@ Este método es útil especialmente cuando el sistema es grande y disperso, y pu
 Consiste en resolver iterativamente cada una de las incógnitas del sistema utilizando las últimas actualizaciones disponibles en cada paso, es decir, se va reemplazando cada componente de 
 𝑥 tan pronto como se calcula.
 
-**[A | b]  →  [I | x]**
+Dado un sistema con 𝑛 ecuaciones y 𝑛 incógnitas, la fórmula general para actualizar la 𝑖-ésima variable en la 𝑘-ésima iteración es:
 
 
 ---
