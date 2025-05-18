@@ -311,7 +311,7 @@ Es especialmente útil cuando la matriz `A` es **diagonalmente dominante** o **s
 
 El método consiste en calcular iterativamente los valores de las incógnitas utilizando únicamente los valores de la iteración anterior. A diferencia del método de Gauss-Seidel, **Jacobi no actualiza los valores intermedios hasta terminar toda la iteración**.
 
-![Captura de pantalla 2025-05-18 102640](https://github.com/user-attachments/assets/d61363fe-0bb3-4ffd-bb69-ef53edb4a0c1)
+![jacobi_formula_fixed](https://github.com/user-attachments/assets/6cae4cdc-78cf-43f7-9c1e-0fa2eb92dc5d)
 
 
 ---
