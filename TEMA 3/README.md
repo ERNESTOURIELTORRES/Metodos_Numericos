@@ -27,8 +27,8 @@ Un sistema de ecuaciones lineales con \( n \) incógnitas puede escribirse como:
 
 Esto se representa como una **matriz aumentada**:
 
-![Fórmula del método de Gauss](METODOS_NUMERICOS/images/gaus.png)
 
+![gaus](https://github.com/user-attachments/assets/7133d94f-3739-4f5d-b835-b47dc48e64f4)
 
 
 
