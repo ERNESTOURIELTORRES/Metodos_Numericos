@@ -20,6 +20,30 @@ public class NewtonInterpolation {
         return dd;
     }
 
-   
+    // Evaluar el polinomio interpolado en un punto xEval
+    public static double evaluarPolinomio(double[][] dd, double[] x, double xEval) {
+        int n = x.length;
+        double resultado = dd[0][0];
+        double producto = 1.0;
+
+        for (int i = 1; i < n; i++) {
+            producto *= (xEval - x[i - 1]);
+            resultado += dd[0][i] * producto;
+        }
+
+        return resultado;
+    }
+
+    // Método principal de prueba
+    public static void main(String[] args) {
+        double[] x = {9, 12, 15}; // Ejemplo de valores de x
+        double[] y = {15, 21, 18}; // Ejemplo de valores de y
+
+        double[][] dd = calcularDiferenciasDivididas(x, y);
+        double xEval = 13.5;
+        double resultado = evaluarPolinomio(dd, x, xEval);
+
+        System.out.printf("Valor interpolado en x = %.2f es: %.2f\n", xEval, resultado);
+    }
 }
 
