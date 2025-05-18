@@ -324,7 +324,7 @@ n    = 3
 ```
 
 ### Resultado esperado
-Ecuación de regresión: Y = 0.3333 + 1.5000 * X
-Coeficiente de correlación r ≈ 0.9818
-Interpretación: Relación positiva fuerte
+- Ecuación de regresión: Y = 0.3333 + 1.5000 * X
+- Coeficiente de correlación r ≈ 0.9818
+- Interpretación: Relación positiva fuerte
 
