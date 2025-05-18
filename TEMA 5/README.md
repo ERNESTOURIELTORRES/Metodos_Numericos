@@ -37,8 +37,8 @@ Consiste en trazar la recta que une los dos puntos conocidos y luego usar la ecu
 
 ## Pseudocódigo del Interpolación Lineal
 
-```plaintext
-## ⚙️ Pseudocódigo
+
+
 
 ```plaintext
 Función Interpolar(x0, y0, x1, y1, x):
@@ -160,8 +160,7 @@ La **interpolación de Newton** es un método para construir un polinomio que pa
 
 ## Pseudocódigo del Método de Interpolación Newton 
 
-```plaintext
-## ⚙️ Pseudocódigo
+
 
 ```plaintext
 Función NewtonInterpolation(x[0..n], y[0..n], xEval):
@@ -202,13 +201,14 @@ xEval = 13.5
 
 - dd[0][2] = (-1 - 2)/(15-9) = -0.5
 
+```plaintext
 resultado = dd[0][0] = 15
 producto = 1
 k=1: producto *= (13.5 - 9) = 4.5
       resultado += 2 * 4.5 = 15 + 9 = 24
 k=2: producto *= (13.5 - 12) = 4.5 * 1.5 = 6.75
       resultado += (-0.5) * 6.75 = 24 - 3.375 = 20.625
-
+```
 
 ### Resultado esperado
 Valor interpolado en x = 13.5 es: 20.625
