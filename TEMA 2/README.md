@@ -196,7 +196,7 @@ La sucesión de valores \( x_0, x_1, x_2, \ldots \) se genera aplicando la funci
 
 ---
 
-##  Pseudocódigo del Método de la Regla Falsa
+##  Pseudocódigo del Método del Punto Fijo
 
 ```plaintext
 Inicio
@@ -275,7 +275,7 @@ El **método de Newton-Raphson** es una técnica iterativa para encontrar raíce
 
 ---
 
-##  Pseudocódigo del Método de la Regla Falsa
+##  Pseudocódigo del Método Newton-Raphson
 
 ```plaintext
 Inicio
@@ -348,7 +348,7 @@ El **método de la secante** es una técnica numérica para encontrar una raíz 
 
 ---
 
-##  Pseudocódigo del Método de la Regla Falsa
+##  Pseudocódigo del Método Secante
 
 ```plaintext
 Inicio
