@@ -54,7 +54,6 @@ public class MinimosCuadrados {
         // Mostrar resultado
         System.out.println("\nResultado:");
         System.out.println("La recta de regresion es: y = " + a_str + " + " + b_str + "x");
-
         scanner.close();
     }
 }
