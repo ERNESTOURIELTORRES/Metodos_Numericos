@@ -27,8 +27,11 @@ Un sistema de ecuaciones lineales con \( n \) incógnitas puede escribirse como:
 
 Esto se representa como una **matriz aumentada**:
 
+![Captura de pantalla 2025-05-18 100122](https://github.com/user-attachments/assets/f9d66cff-a4dc-48a4-be91-c4a805ec8f9c)
+
 
 ![gaus](https://github.com/user-attachments/assets/7133d94f-3739-4f5d-b835-b47dc48e64f4)
+
 
 
 
