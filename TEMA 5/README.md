@@ -90,19 +90,18 @@ La **interpolación de Newton** es un método para construir un polinomio que pa
 
 ##  ¿En qué consiste?
 
-1. **Calcular la tabla de diferencias divididas** \(f[x_i,\dots,x_{i+k}]\).  
-2. **Construir el polinomio** en forma de Newton:
+1. **Calcular la tabla de diferencias divididas** \(f[x_i,\dots,x_{i+k}]\).
+
+   ![divided_differences_formula](https://github.com/user-attachments/assets/b4875a1a-9553-4f60-9305-a84e1728d33c)
+
+3. **Construir el polinomio** en forma de Newton:
+
+   ![newton_polynomial_formula](https://github.com/user-attachments/assets/70200795-7ff3-418b-9cb4-7a7fa0a3c9d1)
 
 
 
 
-![Captura de pantalla 2025-05-18 100122](https://github.com/user-attachments/assets/f9d66cff-a4dc-48a4-be91-c4a805ec8f9c)
-
-
-![gaus](https://github.com/user-attachments/assets/7133d94f-3739-4f5d-b835-b47dc48e64f4)
-
-
-3. **Evaluar** \(P_n(x)\) en el punto deseado.
+4. **Evaluar** \(P_n(x)\) en el punto deseado.
 
 
 ---
