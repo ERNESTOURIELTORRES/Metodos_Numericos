@@ -99,3 +99,80 @@ x2 = -1.0000
 x3 = 2.0000
 
 
+
+
+
+
+# Método de Gauss-Jordan 
+
+El método de Gauss-Jordan es una extensión del método de Gauss que permite resolver sistemas de ecuaciones lineales transformando la matriz aumentada en una matriz identidad. 
+---
+
+##  ¿En qué consiste?
+
+A diferencia del método de Gauss, en Gauss-Jordan también se eliminan los elementos por encima del pivote, dejando solo unos en la diagonal principal y ceros en el resto de la matriz de coeficientes.
+
+**[A | b]  →  [I | x]**
+
+- A es la matriz de coeficientes del sistema
+
+- b es el vector de términos independientes
+
+- I es la matriz identidad
+
+- x es el vector de soluciones del sistema
+---
+
+##  Pasos del Método
+
+1. Pedir al usuario la cantidad de ecuaciones del sistema.
+
+2. Leer la matriz aumentada de tamaño n x (n+1).
+
+Para cada fila:
+
+3. Normalizar el pivote para que sea igual a 1.
+
+4. Hacer ceros en la columna del pivote tanto por debajo como por encima.
+
+5. La solución estará en la última columna de la matriz resultante.
+---
+
+
+## Pseudocódigo del Método de Bisección
+
+```plaintext
+Entrada: matriz aumentada de tamaño n x (n+1)
+
+Para cada fila i de 0 a n-1:
+    Dividir toda la fila i entre el valor del pivote matriz[i][i]
+
+    Para cada fila k de 0 a n-1:
+        Si k ≠ i:
+            factor = matriz[k][i]
+            Para cada columna j de 0 a n:
+                matriz[k][j] = matriz[k][j] - factor * matriz[i][j]
+
+Salida: Última columna contiene las soluciones del sistema
+
+```
+
+## Caso de Prueba
+
+
+x + y + z = 6  
+2y + 5z = -4  
+2x + 5y - z = 27
+
+
+[1  1  1 | 6 ]  
+[0  2  5 | -4]  
+[2  5 -1 | 27]
+
+
+
+### Resultado esperado
+x = 5  
+y = 3  
+z = -2
+
