@@ -40,8 +40,6 @@ Esto se representa como una **matriz aumentada**:
 
 ## Pseudocódigo del Método de Gauss
 
-```plaintext
-## ⚙️ Pseudocódigo
 
 ```plaintext
 Inicio
