@@ -31,6 +31,30 @@ public class MinimosCuadrados {
             y.add(yi);
         }
 
-       
+        // Cálculo de sumatorias
+        double sum_x = 0, sum_y = 0, sum_x2 = 0, sum_xy = 0;
+
+        for (int i = 0; i < n; i++) {
+            double xi = x.get(i);
+            double yi = y.get(i);
+            sum_x += xi;
+            sum_y += yi;
+            sum_x2 += xi * xi;
+            sum_xy += xi * yi;
+        }
+
+        // Cálculo de b y a
+        double b = (n * sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x * sum_x);
+        double a = (sum_y - b * sum_x) / n;
+
+        // Redondear a 4 cifras decimales
+        String a_str = df.format(a);
+        String b_str = df.format(b);
+
+        // Mostrar resultado
+        System.out.println("\nResultado:");
+        System.out.println("La recta de regresion es: y = " + a_str + " + " + b_str + "x");
+
+        scanner.close();
     }
 }
