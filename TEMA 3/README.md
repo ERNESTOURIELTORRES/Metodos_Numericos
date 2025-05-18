@@ -140,8 +140,7 @@ Para cada fila:
 ---
 
 
-## Pseudocódigo del Método de Bisección
-
+## Pseudocódigo del Método de Gauss Jordan
 ```plaintext
 Entrada: matriz aumentada de tamaño n x (n+1)
 
@@ -219,7 +218,7 @@ Dado un sistema con 𝑛 ecuaciones y 𝑛 incógnitas, la fórmula general para
 ---
 
 
-## Pseudocódigo del Método de Bisección
+## Pseudocódigo del Método de Gauss Seidel
 
 ```plaintext
 Entrada: matriz A[n][n], vector b[n], tolerancia tol, máximo de iteraciones maxIter
@@ -331,7 +330,7 @@ El método consiste en calcular iterativamente los valores de las incógnitas ut
 ---
 
 
-## Pseudocódigo del Método de Bisección
+## Pseudocódigo del Método de Jacobi
 
 ```plaintext
 Entrada: matriz A[n][n], vector b[n], vector inicial x[n], tolerancia tol, máximo de iteraciones maxIter
