@@ -258,7 +258,7 @@ Retornar x
 2. x + 3y +  z =  8
 3. x +  y + 5z =  9
 
-- Matriz A:
+Matriz A:
 
 
 - [ 4  1  1 ]
@@ -266,7 +266,7 @@ Retornar x
 - [ 1  1  5 ]
 
 
-- Vector B:
+ Vector B:
 
 
 - [ 7 ]
@@ -274,7 +274,7 @@ Retornar x
 - [ 9 ]
 
 
-- Parametros :
+ Parametros :
 
 
 Tolerancia: 1e-6
