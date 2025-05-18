@@ -227,6 +227,10 @@ El **método de correlación y regresión lineal** permite cuantificar la relaci
 
 - La **regresión lineal** obtiene la ecuación de la recta \(Y = \beta_0 + \beta_1 X\).  
 - El **coeficiente de correlación** \(r\) mide la fuerza y dirección de la relación lineal (va de –1 a +1).
+![correlacion_intercept_formula](https://github.com/user-attachments/assets/5772e1db-c364-4df3-83de-fbc3bebb05a1)
+![correlacion_r_formula](https://github.com/user-attachments/assets/e9c79aea-a649-425a-b943-39e55385cdaf)
+![correlacion_slope_formula](https://github.com/user-attachments/assets/c35e59c5-5b8a-4446-a193-34c4a925fd26)
+
 
 
 
