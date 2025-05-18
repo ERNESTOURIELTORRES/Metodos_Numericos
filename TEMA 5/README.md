@@ -25,14 +25,12 @@ Consiste en trazar la recta que une los dos puntos conocidos y luego usar la ecu
 
 1. Obtener dos puntos conocidos \((x_0, y_0)\) y \((x_1, y_1)\).  
 2. Calcular la pendiente:
-   \[
-   m = \frac{y_1 - y_0}{x_1 - x_0}
-   \]
+   
+   m = yi-y0/x1-x0
+   
 3. Usar la fórmula de la recta para hallar \(y\) en el punto \(x\):
-   \[
-   y = y_0 + m \, (x - x_0)
-   \]
-4. Devolver el valor interpolado \(y\).
+   y(x)=y0+m * (x-x0)
+4. Devolver el valor interpolado (y).
 
 
 ## Pseudocódigo del Método de Gauss
@@ -54,22 +52,22 @@ Función Interpolar(x0, y0, x1, y1, x):
 
 Interpolar entre los puntos conocidos:
 
-- **Punto 1**: \((x_0, y_0) = (2, 4)\)  
-- **Punto 2**: \((x_1, y_1) = (6, 10)\)  
-- **Valor de interés**: \(x = 3\)
+- **Punto 1**: (x_0, y_0) = (2, 4) 
+- **Punto 2**: (x_1, y_1) = (6, 10)  
+- **Valor de interés**: x = 3
 
 1. **Calcular la pendiente**  
-   \[
-   m = \frac{y_1 - y_0}{x_1 - x_0}
-     = \frac{10 - 4}{6 - 2}
-     = \frac{6}{4}
+   
+   m = {y_1 - y_0} / {x_1 - x_0}
+     = {10 - 4} / {6 - 2}
+     = {6} / {4}
      = 1.5
-   \]
+  
 
 2. **Calcular el valor interpolado**  
    \[
-   y(3) = y_0 + m \cdot (x - x_0)
-        = 4 + 1.5 \times (3 - 2)
+   y(3) = y_0 + m  (x - x_0)
+        = 4 + 1.5  (3 - 2)
         = 4 + 1.5
         = 5.5
    \]
