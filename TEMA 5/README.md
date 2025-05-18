@@ -17,6 +17,8 @@ La **interpolación lineal** es un método para estimar valores intermedios de u
 ##  ¿En qué consiste?
 
 Consiste en trazar la recta que une los dos puntos conocidos y luego usar la ecuación de esa recta para calcular el valor de \(y\) correspondiente a un \(x\) dado. La pendiente \(m\) de la recta viene dada por:
+![interpolation_formula](https://github.com/user-attachments/assets/ba90de8d-df43-4622-a971-4d9cb75efe76)
+![slope_formula](https://github.com/user-attachments/assets/c19bb582-5fb9-4109-a963-6b1d95d255a8)
 
 
 ---
