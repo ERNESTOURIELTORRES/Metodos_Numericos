@@ -214,3 +214,110 @@ k=2: producto *= (13.5 - 12) = 4.5 * 1.5 = 6.75
 Valor interpolado en x = 13.5 es: 20.625
 
 
+# Método de Correlación 
+
+El **método de correlación y regresión lineal** permite cuantificar la relación lineal entre dos variables (\(X\) e \(Y\)) y ajustar una línea recta que mejor describa sus datos.  
+
+
+
+
+---
+
+##  ¿En qué consiste?
+
+- La **regresión lineal** obtiene la ecuación de la recta \(Y = \beta_0 + \beta_1 X\).  
+- El **coeficiente de correlación** \(r\) mide la fuerza y dirección de la relación lineal (va de –1 a +1).
+
+
+
+
+
+---
+
+## Pasos a seguir
+
+1. **Recolectar datos.** 
+2. **Calcular** sumas y sumas de cuadrados.
+3. **Determinar** los coeficientes de la recta de regresión:  
+   - Pendiente
+   - Intercepto  
+4. **Calcular** el coeficiente de correlación \(r\).  
+5. **Interpretar**:  
+   - r>0: relación positiva.  
+   - r<0: relación negativa.  
+   - r=0: relación nula.
+
+## Pseudocódigo del Método Correlación  
+
+
+
+```plaintext
+Función CorrelaciónRegresión(X[1..n], Y[1..n]):
+    // 1. Inicializar sumas
+    sumaX  ← 0;  sumaY  ← 0
+    sumaXY ← 0;  sumaX2 ← 0; sumaY2 ← 0
+
+    // 2. Acumular
+    Para i = 1 hasta n:
+        sumaX  ← sumaX  + X[i]
+        sumaY  ← sumaY  + Y[i]
+        sumaXY ← sumaXY + X[i]*Y[i]
+        sumaX2 ← sumaX2 + X[i]^2
+        sumaY2 ← sumaY2 + Y[i]^2
+
+    // 3. Calcular coeficientes de regresión
+    β1 ← (n * sumaXY - sumaX * sumaY) /
+          (n * sumaX2 - sumaX^2)
+    β0 ← (sumaY - β1 * sumaX) / n
+
+    // 4. Calcular coeficiente de correlación
+    r ← (n * sumaXY - sumaX * sumaY) /
+         sqrt((n * sumaX2 - sumaX^2) * (n * sumaY2 - sumaY^2))
+
+    Retornar (β0, β1, r)
+```
+
+## Caso de Prueba
+
+|  i  |  $x_i$  |  $y_i$  |
+| :-: | :-----: | :-----: |
+|  1  |     1   |     2   |
+|  2  |     2   |     3   |
+|  3  |     3   |     5   |
+
+
+
+
+n    = 3
+Σx   = 1 + 2 + 3 = 6
+Σy   = 2 + 3 + 5 = 10
+Σxy  = 1*2 + 2*3 + 3*5 = 23
+Σx²  = 1 + 4 + 9      = 14
+Σy²  = 4 + 9 + 25     = 38
+
+
+```plaintext
+β1 = (3*23 - 6*10) / (3*14 - 6^2)
+   = (69 - 60) / (42 - 36)
+   = 9 / 6
+   = 1.5
+
+β0 = (Σy - β1*Σx) / n
+   = (10 - 1.5*6) / 3
+   = (10 - 9) / 3
+   = 0.3333
+
+
+   r = (3*23 - 6*10) / sqrt((42 - 36)*(3*38 - 10^2))
+  = 9 / sqrt(6 * 14)
+  = 9 / √84
+  ≈ 0.9818
+
+
+```
+
+### Resultado esperado
+Ecuación de regresión: Y = 0.3333 + 1.5000 * X
+Coeficiente de correlación r ≈ 0.9818
+Interpretación: Relación positiva fuerte
+
