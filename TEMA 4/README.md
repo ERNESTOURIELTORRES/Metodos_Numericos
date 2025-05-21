@@ -18,12 +18,13 @@ La **cuadratura gaussiana** consiste en aproximar la integral de una función f(
 
 A diferencia de métodos como el trapecio o Simpson, donde los puntos están equiespaciados, en la cuadratura gaussiana estos puntos y sus respectivos pesos se eligen cuidadosamente para maximizar la precisión del método.
 
--- En la formulación general, se busca aproximar:
+- En la formulación general, se busca aproximar:
 
-![Captura de pantalla 2025-05-20 201922](https://github.com/user-attachments/assets/b951aeb6-0ef6-4d5c-828b-2a5aa9445532)
+![Captura de pantalla 2025-05-20 202412](https://github.com/user-attachments/assets/06d43a6a-55b9-4399-8d8b-434376d9173b)
 
 
--- Cambio de variable 
+
+- Cambio de variable 
 
 ![Captura de pantalla 2025-05-20 202202](https://github.com/user-attachments/assets/d2861db7-4d32-49e0-9096-6c7f1d652a8b)
 
