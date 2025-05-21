@@ -262,7 +262,8 @@ Este método utiliza una fórmula centrada que emplea los valores de la función
 
 La fórmula para la derivada aproximada es:
 
-![Fórmula derivada 3 puntos](https://i.imgur.com/6HnDf1p.png)
+![Captura de pantalla 2025-05-20 205746](https://github.com/user-attachments/assets/1fb52c87-c403-4107-87c5-d7acf74ed8a8)
+
 
 donde:
 
