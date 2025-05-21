@@ -240,5 +240,7 @@ Mostrar resultado de la derivada
 - f'(1.0) \approx \frac{f(1.0 + 0.01) - f(1.0 - 0.01)}{2 \times 0.01}
 
 
-### Resultado obtenido con el código:
+### Resultado obtenido:
+
+- f'(1.0000) ≈ 2.5403
 
