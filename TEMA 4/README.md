@@ -371,3 +371,70 @@ Realizando paso a paso:
 - f'(1) ≈ -3.3308
 
 La derivada aproximada de `f(x) = exp(x) · cos(x)` en `x = 1` usando el método de 5 puntos con `h = 0.01` es **-3.3308**.
+
+# Método de Integración Simpson 1/3
+
+El método de Simpson 1/3 es una técnica numérica para aproximar el valor de una integral definida. Se basa en aproximar la función a integrar mediante segmentos de parábolas que pasan por puntos de la función.
+
+Este método es más preciso que los métodos de rectángulos o trapecios cuando la función es suave, y requiere que el número de intervalos sea **par**.
+
+---
+
+## 🧠 ¿En qué consiste?
+
+El intervalo \[a, b\] se divide en **n** subintervalos iguales (donde **n** es par), con ancho:
+
+- h = (b - a) / n
+
+
+Luego, se evalúa la función en los extremos y puntos internos. La fórmula general del método Simpson 1/3 es:
+
+∫[a to b] f(x) dx ≈ (h / 3) × [ f(x₀) + 4·f(x₁) + 2·f(x₂) + 4·f(x₃) + ... + 2·f(x_{n-2}) + 4·f(x_{n-1}) + f(xₙ) ]
+
+Donde:
+
+- **x₀ = a**,  
+- **xₙ = b**,  
+- **x₁, x₂, ..., xₙ₋₁** son los puntos intermedios,  
+- **h** es el ancho del subintervalo.
+
+---
+
+## 📋 Pasos para resolver una integral con Simpson 1/3
+
+1. Definir la función f(x) a integrar.
+2. Elegir los límites de integración **a** y **b**.
+3. Elegir el número de subintervalos **n** (debe ser par).
+4. Calcular el valor de **h = (b - a) / n**.
+5. Evaluar f(x) en los puntos: x₀, x₁, ..., xₙ.
+6. Aplicar la fórmula del método Simpson 1/3.
+7. Calcular el resultado.
+
+---
+
+## 🧾 Pseudocódigo del método Simpson 1/3
+
+```pseudocode
+Entrada:
+  - f(x): función a integrar
+  - a: límite inferior
+  - b: límite superior
+  - n: número de subintervalos (debe ser par)
+
+Si n no es par:
+  n ← n + 1
+
+h ← (b - a) / n
+suma ← f(a) + f(b)
+
+Para i desde 1 hasta n - 1 hacer:
+  x ← a + i * h
+  Si i es par:
+    suma ← suma + 2 * f(x)
+  Sino:
+    suma ← suma + 4 * f(x)
+
+resultado ← (h / 3) * suma
+Retornar resultado
+
+```
