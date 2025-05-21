@@ -327,8 +327,18 @@ El **método de diferenciación de 5 puntos** es una técnica de derivación num
 
 Este método se basa en una fórmula centrada que utiliza los valores de la función en \(x_0 - 2h\), \(x_0 - h\), \(x_0 + h\), y \(x_0 + 2h\), con un paso \(h\) determinado por el usuario.
 
+![Captura de pantalla 2025-05-20 213157](https://github.com/user-attachments/assets/2d608173-2b37-408c-bd8a-2f068b795c78)
 
-
+| Símbolo           | Significado                                                                 |
+|-------------------|------------------------------------------------------------------------------|
+| `f'(x₀)`           | Aproximación de la derivada de la función en el punto `x₀`.                 |
+| `f(x)`             | Función que se desea derivar.                                               |
+| `x₀`               | Punto en el que se desea calcular la derivada.                              |
+| `h`                | Tamaño del paso: distancia entre los puntos alrededor de `x₀`.              |
+| `f(x₀ + 2h)`       | Valor de la función en el punto dos pasos a la derecha de `x₀`.             |
+| `f(x₀ + h)`        | Valor de la función en el punto un paso a la derecha de `x₀`.               |
+| `f(x₀ - h)`        | Valor de la función en el punto un paso a la izquierda de `x₀`.             |
+| `f(x₀ - 2h)`       | Valor de la función en el punto dos pasos a la izquierda de `x₀`.     
 
 
 
