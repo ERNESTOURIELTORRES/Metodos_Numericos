@@ -18,7 +18,9 @@ La **cuadratura gaussiana** consiste en aproximar la integral de una función f(
 
 A diferencia de métodos como el trapecio o Simpson, donde los puntos están equiespaciados, en la cuadratura gaussiana estos puntos y sus respectivos pesos se eligen cuidadosamente para maximizar la precisión del método.
 
-En la formulación general, se busca aproximar:
+- En la formulación general, se busca aproximar:
+
+![Captura de pantalla 2025-05-20 202412](https://github.com/user-attachments/assets/06d43a6a-55b9-4399-8d8b-434376d9173b)
 
 ##  Pasos del Método
 
@@ -33,6 +35,16 @@ En la formulación general, se busca aproximar:
 4. Evalúa la función en los nodos transformados
 5. Aplica la fórmula de cuadratura
 
+- Cambio de variable 
+
+![Captura de pantalla 2025-05-20 202202](https://github.com/user-attachments/assets/d2861db7-4d32-49e0-9096-6c7f1d652a8b)
+
+- \( f(x) \): Función a integrar.
+- \( a \), \( b \): Límites de integración.
+- \( n \): Número de puntos de Gauss (por ejemplo 2, 3, 4 o 5).
+- \( \xi_i \): Puntos nodales en \([-1, 1]\), definidos por los ceros del polinomio de Legendre de grado \(n\).
+- \( w_i \): Pesos asociados a cada punto \(\xi_i\).
+- \( x_i \): Puntos transformados al intervalo original \([a, b]\).
 
 ---
 
