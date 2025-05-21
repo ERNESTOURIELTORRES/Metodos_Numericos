@@ -212,7 +212,7 @@ Esta f처rmula tiene un error de orden \( O(h^2) \), lo que indica buena precisi�
 
 ---
 
-## Pseudoc처digo
+## Pseudoc처digo Diferenciaci처n 3 puntos 
 
 ```text
 Entrada: funci처n f, punto x0, paso h
