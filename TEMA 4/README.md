@@ -22,6 +22,13 @@ A diferencia de métodos como el trapecio o Simpson, donde los puntos están equ
 
 ![Captura de pantalla 2025-05-20 202412](https://github.com/user-attachments/assets/06d43a6a-55b9-4399-8d8b-434376d9173b)
 
+
+- Cambio de variable 
+
+![Captura de pantalla 2025-05-20 202202](https://github.com/user-attachments/assets/d2861db7-4d32-49e0-9096-6c7f1d652a8b)
+
+---
+
 ##  Pasos del Método
 
 1. Reescribe la integral en el intervalo [−1,1]
@@ -35,9 +42,6 @@ A diferencia de métodos como el trapecio o Simpson, donde los puntos están equ
 4. Evalúa la función en los nodos transformados
 5. Aplica la fórmula de cuadratura
 
-- Cambio de variable 
-
-![Captura de pantalla 2025-05-20 202202](https://github.com/user-attachments/assets/d2861db7-4d32-49e0-9096-6c7f1d652a8b)
 
 - \( f(x) \): Función a integrar.
 - \( a \), \( b \): Límites de integración.
