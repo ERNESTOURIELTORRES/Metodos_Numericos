@@ -287,7 +287,7 @@ Este método se basa en una fórmula centrada que utiliza los valores de la func
 
 ---
 
-## Pseudocódigo
+## Pseudocódigo 5 puntos
 
 ```plaintext
 Inicio
