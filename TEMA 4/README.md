@@ -477,3 +477,143 @@ Resultado ≈ 8.833
 ## Resultado final
 
 La integral de f(x) = x² + 3x + 2 en el intervalo [1, 2] es aproximadamente: 8.833
+
+# Método de Integración Numérica: Simpson 3/8
+
+
+El método de Simpson 3/8 es una técnica de integración numérica que permite aproximar el valor de una integral definida de una función continua. Es una extensión del método de Simpson 1/3 y se basa en utilizar polinomios de tercer grado (cúbicos) para aproximar la función dentro de intervalos igualmente espaciados.
+
+Este método es especialmente útil cuando la función que se quiere integrar no tiene una primitiva conocida o resulta muy difícil de integrar analíticamente.
+
+---
+
+# ¿En que consiste?
+
+El método de Simpson 3/8 consiste en dividir el intervalo de integración [a, b] en n subintervalos iguales, donde n debe ser múltiplo de 3. Luego, se aplica la siguiente fórmula:
+
+Integral aproximada de f(x) desde a hasta b:
+
+(3 * h / 8) * [ f(a) + 3 * sumatoria de f(x_i) con i no múltiplo de 3 + 2 * sumatoria de f(x_i) con i múltiplo de 3 + f(b) ]
+
+donde:
+
+h es el ancho de cada subintervalo, calculado como (b - a) / n
+
+x_i representa los puntos intermedios, es decir, x_i = a + i * h para i = 1 hasta n - 1
+
+---
+
+# Pasos para integración simpson 3/8
+
+1. Ingresar la función f(x) que se desea integrar.
+
+2. Ingresar el límite inferior (a) y el límite superior (b) de la integral.
+
+3. Ingresar el número de subintervalos (n). Este debe ser múltiplo de 3. Si no lo es, se ajusta al siguiente múltiplo de 3.
+
+4. Calcular el valor de h como (b - a) / n.
+
+5. Evaluar f(x) en todos los puntos del intervalo.
+
+6. Aplicar la fórmula del método de Simpson 3/8.
+
+7. Mostrar el resultado aproximado de la integral.
+
+
+# Pseucódigo integración Simspson 3/8 
+
+
+```plaintext
+
+
+Inicio
+    Mostrar mensaje de bienvenida
+    Leer función f(x) como cadena
+    Leer a (límite inferior)
+    Leer b (límite superior)
+    Leer n (número de subintervalos)
+    
+    Si n no es múltiplo de 3 entonces
+        Ajustar n al siguiente múltiplo de 3
+
+    Calcular h = (b - a) / n
+    Calcular suma = f(a) + f(b)
+
+    Para i desde 1 hasta n - 1 hacer
+        Calcular x_i = a + i * h
+        Si i es múltiplo de 3 entonces
+            suma = suma + 2 * f(x_i)
+        Sino
+            suma = suma + 3 * f(x_i)
+        FinSi
+    FinPara
+
+    Calcular resultado = (3 * h / 8) * suma
+    Mostrar resultado
+Fin
+
+```
+
+# Caso de prueba 
+
+```plaintext
+
+Función a integrar: f(x) = x^3 + 2*x + 1
+Límite inferior: a = 0
+Límite superior: b = 3
+Número de intervalos: n = 6 (ya es múltiplo de 3)
+
+Pasos del cálculo:
+
+h = (3 - 0) / 6 = 0.5
+
+Evaluar f(x) en los puntos:
+x0 = 0
+x1 = 0.5
+x2 = 1.0
+x3 = 1.5
+x4 = 2.0
+x5 = 2.5
+x6 = 3.0
+
+Calcular cada f(x):
+
+f(0) = 0^3 + 2*0 + 1 = 1
+
+f(0.5) = (0.5)^3 + 2*0.5 + 1 = 1.625
+
+f(1.0) = 1^3 + 2*1 + 1 = 4
+
+f(1.5) = (1.5)^3 + 2*1.5 + 1 = 7.875
+
+f(2.0) = 8 + 4 + 1 = 13
+
+f(2.5) = 15.625 + 5 + 1 = 21.625
+
+f(3.0) = 27 + 6 + 1 = 34
+
+Clasificar:
+
+f(a) + f(b) = f(0) + f(3) = 1 + 34 = 35
+
+f(x_i) con i no múltiplo de 3: i = 1, 2, 4, 5
+=> f(0.5), f(1.0), f(2.0), f(2.5) = 1.625 + 4 + 13 + 21.625 = 40.25
+=> 3 * 40.25 = 120.75
+
+f(x_i) con i múltiplo de 3: i = 3
+=> f(1.5) = 7.875
+=> 2 * 7.875 = 15.75
+
+Suma total = 35 + 120.75 + 15.75 = 171.5
+
+Resultado = (3 * 0.5 / 8) * 171.5 = 0.1875 * 171.5 = 32.71875
+
+```
+
+
+## Resultado de la integral:
+
+La integral aproximada de f(x) = x^3 + 2x + 1 desde 0 hasta 3 es 32.71875 utilizando el método de Simpson 3/8 con 6 intervalos.
+
+
+
