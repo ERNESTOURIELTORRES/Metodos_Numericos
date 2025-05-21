@@ -487,7 +487,7 @@ Este método es especialmente útil cuando la función que se quiere integrar no
 
 ---
 
-# ¿En que consiste?
+## ¿En que consiste?
 
 El método de Simpson 3/8 consiste en dividir el intervalo de integración [a, b] en n subintervalos iguales, donde n debe ser múltiplo de 3. Luego, se aplica la siguiente fórmula:
 
@@ -503,7 +503,7 @@ x_i representa los puntos intermedios, es decir, x_i = a + i * h para i = 1 hast
 
 ---
 
-# Pasos para integración simpson 3/8
+## Pasos para integración simpson 3/8
 
 1. Ingresar la función f(x) que se desea integrar.
 
@@ -520,7 +520,7 @@ x_i representa los puntos intermedios, es decir, x_i = a + i * h para i = 1 hast
 7. Mostrar el resultado aproximado de la integral.
 
 
-# Pseucódigo integración Simspson 3/8 
+## Pseucódigo integración Simspson 3/8 
 
 
 ```plaintext
@@ -554,7 +554,7 @@ Fin
 
 ```
 
-# Caso de prueba 
+## Caso de prueba 
 
 ```plaintext
 
@@ -616,4 +616,96 @@ Resultado = (3 * 0.5 / 8) * 171.5 = 0.1875 * 171.5 = 32.71875
 La integral aproximada de f(x) = x^3 + 2x + 1 desde 0 hasta 3 es 32.71875 utilizando el método de Simpson 3/8 con 6 intervalos.
 
 
+
+# Método de Integración Trapecio
+
+El **método del trapecio** es una técnica de integración numérica que se utiliza para aproximar el valor de una integral definida. Se basa en dividir el área bajo la curva en varios trapecios en lugar de rectángulos o polinomios. Es una forma sencilla y útil para calcular integrales de funciones cuando no se puede obtener una solución exacta.
+
+## ¿En que consiste?
+
+Este método consiste en dividir el intervalo **[a, b]** en n subintervalos iguales. En cada uno de esos subintervalos, se forma un trapecio al conectar los puntos de la función con una línea recta. El área total se calcula sumando las áreas de todos los trapecios.
+
+Integral aproximada de f(x) desde a hasta b:
+
+h * [ (f(a) + f(b)) / 2 + suma de f(x_i) desde i = 1 hasta n - 1 ]
+
+donde:
+
+h es el ancho de cada subintervalo, calculado como (b - a) / n
+
+x_i son los puntos intermedios: x_i = a + i * h
+
+## Pasos para resolver usando el método del trapecio
+
+1. Ingresar la función f(x) que se desea integrar (usando x como variable).
+
+2. Ingresar el límite inferior a y el límite superior b.
+
+3. Ingresar el número de intervalos n.
+
+4. Calcular h como (b - a) / n.
+
+5. Evaluar f(x) en los puntos: a, b y en cada punto intermedio.
+
+6. Aplicar la fórmula para obtener la integral aproximada.
+
+7. Mostrar el resultado final.
+
+## Pseudocódigo Método de Integración Trapecio
+```plaintext
+
+Inicio
+    Mostrar mensaje de bienvenida
+    Leer función f(x) como texto
+    Leer a (límite inferior)
+    Leer b (límite superior)
+    Leer n (número de intervalos)
+
+    Calcular h = (b - a) / n
+    Calcular suma = (f(a) + f(b)) / 2
+
+    Para i desde 1 hasta n - 1 hacer
+        Calcular x_i = a + i * h
+        suma = suma + f(x_i)
+    FinPara
+
+    resultado = h * suma
+    Mostrar resultado
+Fin
+```
+## Caso de prueba
+```plaintext
+Función a integrar: f(x) = x^2 + 2*x + 1
+
+Límite inferior: a = 0
+Límite superior: b = 2
+Número de intervalos: n = 4
+
+Cálculos:
+h = (2 - 0) / 4 = 0.5
+
+Evaluar f(x) en:
+
+x0 = 0 → f(0) = 0^2 + 2*0 + 1 = 1
+
+x1 = 0.5 → f(0.5) = (0.5)^2 + 2*0.5 + 1 = 2.25
+
+x2 = 1.0 → f(1.0) = 1 + 2 + 1 = 4
+
+x3 = 1.5 → f(1.5) = 2.25 + 3 + 1 = 6.25
+
+x4 = 2.0 → f(2.0) = 4 + 4 + 1 = 9
+
+f(a) = f(0) = 1
+f(b) = f(2.0) = 9
+f(x_i) internos = f(0.5) + f(1.0) + f(1.5) = 2.25 + 4 + 6.25 = 12.5
+
+suma = (1 + 9) / 2 + 12.5 = 5 + 12.5 = 17.5
+
+Resultado = h * suma = 0.5 * 17.5 = 8.75
+```
+
+## Resultado del la prueba:
+
+La integral aproximada de f(x) = x^2 + 2x + 1 desde 0 hasta 2 es 8.75 usando el método del trapecio con 4 intervalos.
 
