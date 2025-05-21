@@ -342,6 +342,11 @@ El **método de mínimos cuadrados** es una técnica estadística que ajusta una
 3. Encontrar los coeficientes \(a\) (ordenada al origen) y \(b\) (pendiente) que minimicen  
    S(a,b) = ∑(yᵢ – (a + b xᵢ))²
 4. Resolver las ecuaciones normales para obtener \(a\) y \(b\).
+![minimos_a_formula](https://github.com/user-attachments/assets/42c68907-52c8-491b-a8a6-c4751f2a6d43)
+![minimos_b_formula](https://github.com/user-attachments/assets/82b6df76-37ca-4e4c-98f8-ba550c2617b3)
+![minimos_s_formula](https://github.com/user-attachments/assets/ccae8043-6803-491b-926b-76a1314162d6)
+
+   
 
 
 
