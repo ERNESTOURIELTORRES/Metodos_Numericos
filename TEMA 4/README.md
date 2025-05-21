@@ -244,3 +244,123 @@ Mostrar resultado de la derivada
 
 - f'(1.0000) ≈ 2.5403
 
+
+
+# Método de Diferenciación 3 puntos 
+
+
+El **Método de Diferenciación de 3 Puntos** es una técnica de diferenciación numérica usada para aproximar la derivada de una función en un punto, basándose en los valores de la función en tres puntos cercanos.
+
+---
+
+## ¿En qué consiste ?
+
+Este método utiliza una fórmula centrada que emplea los valores de la función en los puntos 
+\( x_0 - h \), \( x_0 \) y \( x_0 + h \).
+
+La fórmula para la derivada aproximada es:
+
+![Fórmula derivada 3 puntos](https://i.imgur.com/6HnDf1p.png)
+
+donde:
+
+- \( f'(x_0) \) es la derivada aproximada en el punto \( x_0 \).
+- \( h \) es un paso pequeño.
+
+Esta fórmula tiene un error de orden \( O(h^2) \), lo que indica buena precisión cuando \( h \) es pequeño.
+
+---
+
+## Pasos para resolver
+
+1. Definir la función \( f(x) \).
+2. Elegir el punto \( x_0 \) donde se quiere calcular la derivada.
+3. Seleccionar un valor pequeño para el paso \( h \).
+4. Calcular \( f(x_0 + h) \) y \( f(x_0 - h) \).
+5. Aplicar la fórmula:
+
+6. Obtener el valor aproximado de la derivada en \( x_0 \).
+
+---
+
+## Pseudocódigo Diferenciación 3 puntos 
+
+```text
+Entrada: función f, punto x0, paso h
+
+Calcular f1 = f(x0 + h)
+Calcular f2 = f(x0 - h)
+
+Derivada ≈ (f1 - f2) / (2 * h)
+
+Mostrar resultado de la derivada
+```
+
+
+## Caso de prueba y resultado
+
+### Datos de entrada:
+
+- Función:  f(x) = x^2 + \sin(x) 
+- Punto donde se calcula la derivada:  x_0 = 1.0 
+- Paso:  h = 0.01 
+
+### Cálculo realizado:
+
+
+- f'(1.0) \approx \frac{f(1.0 + 0.01) - f(1.0 - 0.01)}{2 \times 0.01}
+
+
+### Resultado obtenido:
+
+- f'(1.0000) ≈ 2.5403
+
+# Método de Diferenciación Numérica: 5 Puntos
+
+El **método de diferenciación de 5 puntos** es una técnica de derivación numérica centrada que permite estimar la primera derivada de una función en un punto dado. Utiliza cinco evaluaciones de la función, distribuidas de manera simétrica alrededor del punto central, lo cual proporciona una aproximación más precisa que otros métodos como el de 3 puntos o 2 puntos.
+
+---
+
+## ¿En qué consiste?
+
+Este método se basa en una fórmula centrada que utiliza los valores de la función en \(x_0 - 2h\), \(x_0 - h\), \(x_0 + h\), y \(x_0 + 2h\), con un paso \(h\) determinado por el usuario.
+
+
+
+
+
+
+
+---
+
+## Pasos para resolver
+
+1. **Definir la función** que se va a derivar, escrita en términos de \(x\).
+2. **Elegir el punto \(x_0\)** donde se desea estimar la derivada.
+3. **Elegir un valor para \(h\)**, el tamaño de paso (debe ser pequeño).
+4. **Evaluar la función** en los puntos: \(x_0 - 2h\), \(x_0 - h\), \(x_0 + h\), \(x_0 + 2h\).
+5. **Aplicar la fórmula** para obtener la derivada aproximada.
+6. **Mostrar el resultado.**
+
+---
+
+## Pseudocódigo
+
+```plaintext
+Inicio
+    Mostrar "Método de Diferenciación de 5 Puntos"
+    
+    Leer funcion como cadena (por ejemplo: exp(x)*cos(x))
+    Leer x0 (punto donde se desea derivar)
+    Leer h (tamaño del paso)
+    
+    Evaluar f(x0 + 2h)
+    Evaluar f(x0 + h)
+    Evaluar f(x0 - h)
+    Evaluar f(x0 - 2h)
+
+    derivada ← [ -f(x0 + 2h) + 8*f(x0 + h) - 8*f(x0 - h) + f(x0 - 2h) ] / (12*h)
+    
+    Mostrar derivada con 12 decimales
+Fin
+```
