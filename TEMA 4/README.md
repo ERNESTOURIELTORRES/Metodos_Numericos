@@ -18,7 +18,7 @@ La **cuadratura gaussiana** consiste en aproximar la integral de una función f(
 
 A diferencia de métodos como el trapecio o Simpson, donde los puntos están equiespaciados, en la cuadratura gaussiana estos puntos y sus respectivos pesos se eligen cuidadosamente para maximizar la precisión del método.
 
-
+En la formulación general, se busca aproximar:
 
 
 
@@ -26,7 +26,7 @@ A diferencia de métodos como el trapecio o Simpson, donde los puntos están equ
 ---
 
 
-## Pseudocódigo del Método de Gauss
+## Pseudocódigo del Método de Cuadratura Gaussiana
 
 
 ```plaintext
