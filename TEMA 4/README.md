@@ -248,76 +248,6 @@ Mostrar resultado de la derivada
 
 
 
-# Método de Diferenciación 3 puntos 
-
-
-El **Método de Diferenciación de 3 Puntos** es una técnica de diferenciación numérica usada para aproximar la derivada de una función en un punto, basándose en los valores de la función en tres puntos cercanos.
-
----
-
-## ¿En qué consiste ?
-
-Este método utiliza una fórmula centrada que emplea los valores de la función en los puntos 
-\( x_0 - h \), \( x_0 \) y \( x_0 + h \).
-
-La fórmula para la derivada aproximada es:
-
-![Captura de pantalla 2025-05-20 205746](https://github.com/user-attachments/assets/1fb52c87-c403-4107-87c5-d7acf74ed8a8)
-
-
-donde:
-
-- \( f'(x_0) \) es la derivada aproximada en el punto \( x_0 \).
-- \( h \) es un paso pequeño.
-
-Esta fórmula tiene un error de orden \( O(h^2) \), lo que indica buena precisión cuando \( h \) es pequeño.
-
----
-
-## Pasos para resolver
-
-1. Definir la función \( f(x) \).
-2. Elegir el punto \( x_0 \) donde se quiere calcular la derivada.
-3. Seleccionar un valor pequeño para el paso \( h \).
-4. Calcular \( f(x_0 + h) \) y \( f(x_0 - h) \).
-5. Aplicar la fórmula:
-
-6. Obtener el valor aproximado de la derivada en \( x_0 \).
-
----
-
-## Pseudocódigo Diferenciación 3 puntos 
-
-```text
-Entrada: función f, punto x0, paso h
-
-Calcular f1 = f(x0 + h)
-Calcular f2 = f(x0 - h)
-
-Derivada ≈ (f1 - f2) / (2 * h)
-
-Mostrar resultado de la derivada
-```
-
-
-## Caso de prueba y resultado
-
-### Datos de entrada:
-
-- Función:  f(x) = x^2 + \sin(x) 
-- Punto donde se calcula la derivada:  x_0 = 1.0 
-- Paso:  h = 0.01 
-
-### Cálculo realizado:
-
-
-- f'(1.0) \approx \frac{f(1.0 + 0.01) - f(1.0 - 0.01)}{2 \times 0.01}
-
-
-### Resultado obtenido:
-
-- f'(1.0000) ≈ 2.5403
-
 # Método de Diferenciación Numérica: 5 Puntos
 
 El **método de diferenciación de 5 puntos** es una técnica de derivación numérica centrada que permite estimar la primera derivada de una función en un punto dado. Utiliza cinco evaluaciones de la función, distribuidas de manera simétrica alrededor del punto central, lo cual proporciona una aproximación más precisa que otros métodos como el de 3 puntos o 2 puntos.
@@ -378,3 +308,66 @@ Inicio
 Fin
 
 ```
+
+# Caso de Prueba
+
+Queremos calcular la derivada de la función:
+
+**f(x) = exp(x) · cos(x)**
+
+En el punto:
+
+- x₀ = 1  
+- Paso h = 0.01  
+
+---
+
+### Fórmula Utilizada
+
+Derivada centrada de 5 puntos:
+f'(x₀) = [ -f(x₀ + 2h) + 8·f(x₀ + h) - 8·f(x₀ - h) + f(x₀ - 2h) ] / (12·h)
+
+
+---
+
+### Evaluación de los puntos
+
+Calculamos los valores necesarios:
+
+```plaintext
+
+f(1.02) = exp(1.02) · cos(1.02) = 2.7730 · 0.5178 ≈ 1.4365
+f(1.01) = exp(1.01) · cos(1.01) = 2.7456 · 0.5359 ≈ 1.4709
+f(0.99) = exp(0.99) · cos(0.99) = 2.6906 · 0.5715 ≈ 1.5373
+f(0.98) = exp(0.98) · cos(0.98) = 2.6645 · 0.5888 ≈ 1.5680
+
+```
+
+
+---
+
+## Sustitución en la fórmula
+
+Sustituyendo en la fórmula:
+
+- f'(1) = [ -1.4365 + 8·1.4709 - 8·1.5373 + 1.5680 ] / (12·0.01)
+
+
+Realizando paso a paso:
+
+```plaintext
+
+= [ -1.4365 + 11.7672 - 12.2984 + 1.5680 ] / 0.12
+= [ -0.3997 ] / 0.12
+= -3.3308
+
+```
+
+
+---
+
+## Resultado Final
+
+- f'(1) ≈ -3.3308
+
+La derivada aproximada de `f(x) = exp(x) · cos(x)` en `x = 1` usando el método de 5 puntos con `h = 0.01` es **-3.3308**.
