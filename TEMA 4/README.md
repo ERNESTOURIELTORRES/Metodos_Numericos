@@ -380,7 +380,7 @@ Este método es más preciso que los métodos de rectángulos o trapecios cuando
 
 ---
 
-## 🧠 ¿En qué consiste?
+##  ¿En qué consiste?
 
 El intervalo \[a, b\] se divide en **n** subintervalos iguales (donde **n** es par), con ancho:
 
@@ -400,7 +400,7 @@ Donde:
 
 ---
 
-## 📋 Pasos para resolver una integral con Simpson 1/3
+##  Pasos para resolver una integral con Simpson 1/3
 
 1. Definir la función f(x) a integrar.
 2. Elegir los límites de integración **a** y **b**.
@@ -412,7 +412,7 @@ Donde:
 
 ---
 
-## 🧾 Pseudocódigo del método Simpson 1/3
+##  Pseudocódigo del método Simpson 1/3
 
 ```pseudocode
 Entrada:
@@ -438,3 +438,42 @@ resultado ← (h / 3) * suma
 Retornar resultado
 
 ```
+
+# Caso de prueba
+
+Calcular:
+
+```plaintext
+
+∫[1 a 2] (x^2 + 3x + 2) dx
+
+Con n = 4 subintervalos.
+
+Paso 1: Definir la función
+
+f(x) = x² + 3x + 2
+
+Paso 2: Calcular h
+
+h = (b - a) / n = (2 - 1) / 4 = 0.25
+
+Paso 3: Evaluar f(x) en los puntos
+Los puntos son:
+
+x₀ = 1.00   → f(x₀) = 1² + 3·1 + 2 = 6  
+x₁ = 1.25   → f(x₁) = 1.5625 + 3.75 + 2 = 7.3125  
+x₂ = 1.50   → f(x₂) = 2.25 + 4.5 + 2 = 8.75  
+x₃ = 1.75   → f(x₃) = 3.0625 + 5.25 + 2 = 10.3125  
+x₄ = 2.00   → f(x₄) = 4 + 6 + 2 = 12
+
+Paso 4: Aplicar fórmula de Simpson 1/3
+
+Resultado ≈ (h / 3) × [f(x₀) + 4·f(x₁) + 2·f(x₂) + 4·f(x₃) + f(x₄)]
+Resultado ≈ (0.25 / 3) × [6 + 4·7.3125 + 2·8.75 + 4·10.3125 + 12]
+Resultado ≈ 0.0833 × [6 + 29.25 + 17.5 + 41.25 + 12]
+Resultado ≈ 0.0833 × 106
+Resultado ≈ 8.833
+```
+## Resultado final
+
+La integral de f(x) = x² + 3x + 2 en el intervalo [1, 2] es aproximadamente: 8.833
