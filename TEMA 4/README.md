@@ -189,12 +189,14 @@ Este método utiliza una fórmula centrada que emplea los valores de la función
 
 La fórmula para la derivada aproximada es:
 
-![Fórmula derivada 3 puntos](https://i.imgur.com/6HnDf1p.png)
+![Captura de pantalla 2025-05-20 205746](https://github.com/user-attachments/assets/cbe86609-be47-44de-b6be-3eeb25042674)
 
-donde:
-
+- Donde:
 - \( f'(x_0) \) es la derivada aproximada en el punto \( x_0 \).
 - \( h \) es un paso pequeño.
+- \( f(x_0 + h) \) y \( f(x_0 - h) \) son los valores de la función en puntos cercanos a \( x_0 \).
+
+
 
 Esta fórmula tiene un error de orden \( O(h^2) \), lo que indica buena precisión cuando \( h \) es pequeño.
 
