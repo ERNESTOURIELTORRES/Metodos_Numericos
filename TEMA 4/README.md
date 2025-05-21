@@ -20,7 +20,18 @@ A diferencia de métodos como el trapecio o Simpson, donde los puntos están equ
 
 En la formulación general, se busca aproximar:
 
+##  Pasos del Método
 
+1. Reescribe la integral en el intervalo [−1,1]
+2. Selecciona el número de puntos nnn (grados de precisión)
+3. Obtén los nodos xi​ y pesos wi
+ - Para el valor de nnn seleccionado:
+- Los nodos xi​ son las raíces del polinomio de Legendre Pn(x)
+
+
+- Los pesos wi​ están tabulados y dependen de nnn.
+4. Evalúa la función en los nodos transformados
+5. Aplica la fórmula de cuadratura
 
 
 ---
@@ -30,56 +41,120 @@ En la formulación general, se busca aproximar:
 
 
 ```plaintext
-Inicio
-  Leer número de ecuaciones n
-  Crear matriz aumentada de tamaño n x (n+1)
+INICIO DEL PROGRAMA
 
-  Por cada fila i de 0 a n-1
-    Buscar el pivote más grande en columna i
-    Intercambiar filas si es necesario
+IMPRIMIR "INTEGRACIÓN POR CUADRATURA GAUSSIANA"
 
-    Por cada fila k desde i+1 hasta n-1
-      factor ← matriz[k][i] / matriz[i][i]
-      Por cada columna j desde i hasta n
-        matriz[k][j] ← matriz[k][j] - factor * matriz[i][j]
+IMPRIMIR "Ingresa la función f(x):"
+LEER funcionStr
 
-  Sustitución regresiva:
-  Por i desde n-1 hasta 0
-    solución[i] ← matriz[i][n]
-    Por j desde i+1 hasta n-1
-      solución[i] ← solución[i] - matriz[i][j] * solución[j]
-    solución[i] ← solución[i] / matriz[i][i]
+// Evaluar la función (en pseudocódigo suponemos que existe una función para eso)
+DEFINIR funcion(x) COMO evaluar la expresión funcionStr, reemplazando "x" por el valor dado
 
-  Mostrar solución
-Fin
+IMPRIMIR "Ingresa el límite inferior (a):"
+LEER a
+
+IMPRIMIR "Ingresa el límite superior (b):"
+LEER b
+
+IMPRIMIR "Número de puntos (2, 3, 4 o 5):"
+LEER n
+
+SI n < 2 O n > 5 ENTONCES
+    IMPRIMIR "Número no válido, se usará 5 puntos por defecto"
+    n ← 5
+FIN SI
+
+// Tabla de puntos y pesos para n = 2 a 5
+DEFINIR puntosPesos COMO MATRIZ [
+    // n = 2
+    [-0.5773502692, 1.0, 0.5773502692, 1.0],
+    // n = 3
+    [-0.7745966692, 0.5555555556, 0.0, 0.8888888889, 0.7745966692, 0.5555555556],
+    // n = 4
+    [-0.8611363116, 0.3478548451, -0.3399810436, 0.6521451549, 0.3399810436, 0.6521451549, 0.8611363116, 0.3478548451],
+    // n = 5
+    [-0.9061798459, 0.2369268851, -0.5384693101, 0.4786286705, 0.0, 0.5688888889, 0.5384693101, 0.4786286705, 0.9061798459, 0.2369268851]
+]
+
+suma ← 0
+index ← n - 2  // índice en la tabla
+
+PARA i DESDE 0 HASTA n - 1 HACER
+    xi ← puntosPesos[index][2 * i]
+    wi ← puntosPesos[index][2 * i + 1]
+    
+    // Cambiar de intervalo [-1, 1] a [a, b]
+    x ← ((b - a) * xi + (a + b)) / 2
+    fx ← funcion(x)
+
+    suma ← suma + wi * fx
+FIN PARA
+
+resultado ← (b - a) / 2 * suma
+
+IMPRIMIR "El resultado de la integral es: ", resultado
+
+FIN DEL PROGRAMA
 ```
 
 ## Caso de Prueba
 
-Sistema de ecuaciones:
 
-2x + 3y + z = 1  
-4x + y - 2z = 2  
--2x + 5y + 2z = 3
+Este caso de prueba ilustra cómo se utiliza el programa para calcular una integral definida mediante el método de Cuadratura Gaussiana.
 
-Representación como matriz aumentada:
+---
 
-[  2   3   1  |  1 ]  
-[  4   1  -2  |  2 ]  
-[ -2   5   2  |  3 ]
+### Entradas
 
-Proceso:
+| Parámetro         | Valor                         |
+|------------------|-------------------------------|
+| Función          | `x^2`                         |
+| Límite inferior  | `a = 0`                       |
+| Límite superior  | `b = 1`                       |
+| Número de puntos | `n = 2`                       |
 
-1. Convertir a forma escalonada (triangular superior)
-2. Usar sustitución regresiva
+---
+
+###  Cálculo Teórico
+
+La integral de `f(x) = x^2` en el intervalo `[0, 1]` es:
+
+```math
+∫₀¹ x² dx = [x³ / 3]₀¹ = (1³ / 3) - (0³ / 3) = 1/3 ≈ 0.333333
+```
+
+- Intervalo: a = 0, b = 1
+- Número de puntos: n = 2
+- Puntos y pesos de Gauss-Legendre para n = 2:
+  - `x₁ = -0.5773502692`, `w₁ = 1.0`
+  - `x₂ =  0.5773502692`, `w₂ = 1.0`
+
+- Cambio de variable:
+  - Fórmula: `x'_i = ((b - a) * x_i + (a + b)) / 2`
+  - `x₁' = ((1 - 0) * -0.5773502692 + (0 + 1)) / 2 = 0.2113248654`
+  - `x₂' = ((1 - 0) *  0.5773502692 + (0 + 1)) / 2 = 0.7886751346`
+
+###  Evaluaciones de la función `f(x) = x^2`
+
+- `f(x₁') = (0.2113248654)^2 ≈ 0.0446581987`
+- `f(x₂') = (0.7886751346)^2 ≈ 0.6220084679`
+
+### 🧾 Resultado
+
+- Fórmula de integración de Cuadratura Gaussiana:
+  
+  ```math
+  ∫ₐᵇ f(x) dx ≈ (b - a) / 2 × Σ [wᵢ × f(xᵢ')]
+  ```
 
 
+## Resultado esperado
+```plaintext
+Ingresa la función f(x): x^2
+Ingresa el límite inferior (a): 0
+Ingresa el límite superior (b): 1
+Número de puntos (2, 3, 4 o 5): 2
 
-x1 = 1.0000  
-x2 = -1.0000  
-x3 = 2.0000
-
-### Resultado esperado
-x1 = 1.0000  
-x2 = -1.0000  
-x3 = 2.0000
+El resultado de la integral es: 0.3333
+```
