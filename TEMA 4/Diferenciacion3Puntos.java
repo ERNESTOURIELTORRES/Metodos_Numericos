@@ -109,5 +109,5 @@ public class Diferenciacion3Puntos {
             throw new RuntimeException("Error al evaluar la función: " + e.getMessage());
         }
     }
-}// ESTOS CODIGOS FUERON ECHOS EN EQUIPO 
+}
   

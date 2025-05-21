@@ -174,3 +174,71 @@ Número de puntos (2, 3, 4 o 5): 2
 
 El resultado de la integral es: 0.3333
 ```
+
+# Método de Diferenciación 3 puntos 
+
+
+El **Método de Diferenciación de 3 Puntos** es una técnica de diferenciación numérica usada para aproximar la derivada de una función en un punto, basándose en los valores de la función en tres puntos cercanos.
+
+---
+
+## ¿En qué consiste ?
+
+Este método utiliza una fórmula centrada que emplea los valores de la función en los puntos 
+\( x_0 - h \), \( x_0 \) y \( x_0 + h \).
+
+La fórmula para la derivada aproximada es:
+
+![Fórmula derivada 3 puntos](https://i.imgur.com/6HnDf1p.png)
+
+donde:
+
+- \( f'(x_0) \) es la derivada aproximada en el punto \( x_0 \).
+- \( h \) es un paso pequeño.
+
+Esta fórmula tiene un error de orden \( O(h^2) \), lo que indica buena precisión cuando \( h \) es pequeño.
+
+---
+
+## Pasos para resolver
+
+1. Definir la función \( f(x) \).
+2. Elegir el punto \( x_0 \) donde se quiere calcular la derivada.
+3. Seleccionar un valor pequeño para el paso \( h \).
+4. Calcular \( f(x_0 + h) \) y \( f(x_0 - h) \).
+5. Aplicar la fórmula:
+
+6. Obtener el valor aproximado de la derivada en \( x_0 \).
+
+---
+
+## Pseudocódigo
+
+```text
+Entrada: función f, punto x0, paso h
+
+Calcular f1 = f(x0 + h)
+Calcular f2 = f(x0 - h)
+
+Derivada ≈ (f1 - f2) / (2 * h)
+
+Mostrar resultado de la derivada
+```
+
+
+## Caso de prueba y resultado
+
+### Datos de entrada:
+
+- Función:  f(x) = x^2 + \sin(x) 
+- Punto donde se calcula la derivada:  x_0 = 1.0 
+- Paso:  h = 0.01 
+
+### Cálculo realizado:
+
+
+- f'(1.0) \approx \frac{f(1.0 + 0.01) - f(1.0 - 0.01)}{2 \times 0.01}
+
+
+### Resultado obtenido con el código:
+
