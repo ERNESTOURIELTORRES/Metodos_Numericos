@@ -58,6 +58,47 @@ public class EulerODESolver {
         double[][] solucion = new double[n][pasos];
         double[] tiempo = new double[pasos];
 
-        
+        // Inicializar
+        for (int i = 0; i < n; i++) {
+            solucion[i][0] = condicionesIniciales[i];
+        }
+        for (int i = 0; i < pasos; i++) {
+            tiempo[i] = i * h;
+        }
+
+        // 6. Método de Euler
+        for (int i = 1; i < pasos; i++) {
+            double t = tiempo[i - 1];
+            double[] anteriores = new double[n];
+            for (int j = 0; j < n; j++) {
+                anteriores[j] = solucion[j][i - 1];
+            }
+
+            for (int j = 0; j < n; j++) {
+                Expression expr = funciones[j];
+                expr.setVariable("t", t);
+                for (int k = 0; k < n; k++) {
+                    expr.setVariable(varNames[k], anteriores[k]);
+                }
+                double derivada = expr.evaluate();
+                solucion[j][i] = anteriores[j] + h * derivada;
+            }
+        }
+
+        // 7. Imprimir resultados
+        System.out.println("\nResultados numéricos:");
+        System.out.print("t\t");
+        for (String var : varNames) {
+            System.out.print(var + "(t)\t\t");
+        }
+        System.out.println();
+
+        for (int i = 0; i < pasos; i++) {
+            System.out.printf("%.2f\t", tiempo[i]);
+            for (int j = 0; j < n; j++) {
+                System.out.printf("%.6f\t", solucion[j][i]);
+            }
+            System.out.println();
+        }
     }
 }
