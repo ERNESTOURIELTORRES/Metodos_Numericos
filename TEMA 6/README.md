@@ -290,3 +290,143 @@ y[i+1] = y[i] + h * f(t[i], y[i])
 | 0.6   | 1.728000  | 1.822119   | 0.094119       |
 | 0.8   | 2.073600  | 2.225541   | 0.151941       |
 | 1.0   | 2.488320  | 2.718282   | 0.229962       |
+
+
+
+
+# Método de Heun 
+
+
+El método de Heun, también conocido como el método del punto medio o método mejorado de Euler, es un método numérico de segundo orden para resolver ecuaciones diferenciales ordinarias (EDO). Ofrece mayor precisión que el método de Euler simple, usando una predicción y una corrección en cada paso.
+
+
+
+---
+
+##  ¿En qué consiste?
+El método de Heun consiste en dos etapas en cada paso:
+
+1. **Predicción**: Se calcula un valor provisional de la solución usando Euler:
+```plaintext
+
+k1 = f(x, y)
+y_pred = y + h * k1
+
+```
+2. **Corrección**: Se evalúa la pendiente en el punto provisional y se promedia con la pendiente inicial:
+
+```plaintext
+k2 = f(x + h, y_pred)
+pendiente_prom = (k1 + k2) / 2
+y_nuevo = y + h * pendiente_prom
+```
+
+La fórmula completa de actualización es:
+
+y_nuevo = y + h * ( f(x, y) + f(x + h, y + h * f(x, y)) ) / 2
+
+
+---
+
+## Pasos del método
+
+
+1. Definir la ecuación diferencial dy/dx = f(x, y).  
+2. Fijar condición inicial x0, y0.  
+3. Elegir tamaño de paso h.  
+4. Calcular número de pasos: pasos = (x_final - x0) / h.  
+5. Para cada paso:
+   - Calcular k1 = f(x, y).  
+   - Calcular y_pred = y + h * k1.  
+   - Calcular k2 = f(x + h, y_pred).  
+   - Calcular pendiente_prom = (k1 + k2) / 2.  
+   - Actualizar y = y + h * pendiente_prom.  
+   - Actualizar x = x + h.  
+6. Repetir hasta alcanzar x_final.  
+7. Guardar o imprimir cada par (x, y).
+
+---
+
+## Pseudocódigo del Interpolación Lineal
+
+```plaintext
+
+Proceso Metodo_Heun
+
+    Escribir "Ingrese valor inicial de x (x0):"
+    Leer x
+    Escribir "Ingrese valor inicial de y (y0):"
+    Leer y
+    Escribir "Ingrese paso h:"
+    Leer h
+    Escribir "Ingrese valor final de x:"
+    Leer x_final
+
+    pasos <- Trunc( (x_final - x) / h )
+
+    Escribir "x", "   ", "y"
+    Escribir x, "   ", y
+
+    Para i <- 1 Hasta pasos
+        // Prediccion
+        k1 <- f(x, y)            // defina f(x,y) segun su problema
+        y_pred <- y + h * k1
+
+        // Correccion
+        k2 <- f(x + h, y_pred)
+        pendiente_prom <- (k1 + k2) / 2
+
+        // Actualizar valores
+        y <- y + h * pendiente_prom
+        x <- x + h
+
+        Escribir x, "   ", y
+    Fin Para
+
+FinProceso
+
+```
+
+---
+
+## Caso de Prueba
+Resolvamos la EDO:
+
+- dy/dx = x + y
+
+con condición inicial
+
+x0 = 0,  y0 = 90
+
+y paso
+
+h = 1.0
+
+```plaintext
+k1 = f(0, 90) = 0 + 90 = 90
+
+y_pred = 90 + 1 * 90 = 180
+
+k2 = f(1, 180) = 1 + 180 = 181
+
+pendiente_prom = (90 + 181) / 2 = 135.5
+
+y1 = 90 + 1 * 135.5 = 225.5
+
+x1 = 0 + 1 = 1.0
+```
+### Resultado esperado
+
+
+|  x   | y (Heun) |
+|------|----------|
+| 0.0  |   90.00  |
+| 1.0  |  225.50  |
+
+Este resultado muestra cómo el método de Heun mejora la aproximación frente a Euler simple al promediar la pendiente inicial y la pendiente en el punto predictor. En este caso, la pendiente inicial (90) y la pendiente en el predictor (181) se promedian (135.5) para obtener un incremento más preciso de y, pasando de 90 a 225.50 en un solo paso.
+
+
+
+
+
+
