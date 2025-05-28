@@ -39,5 +39,25 @@ public class EulerODESolver {
 
         }
 
+        // 4. Condiciones iniciales
+        double[] condicionesIniciales = new double[n];
+        System.out.println("\nIngrese las condiciones iniciales:");
+        for (int i = 0; i < n; i++) {
+            System.out.print(varNames[i] + "(0) = ");
+            condicionesIniciales[i] = Double.parseDouble(scanner.nextLine());
+        }
+
+        // 5. Parámetros de simulación
+        System.out.print("\nIngrese el paso de tiempo (h): ");
+        double h = Double.parseDouble(scanner.nextLine());
+
+        System.out.print("Ingrese el tiempo final de simulación: ");
+        double tFinal = Double.parseDouble(scanner.nextLine());
+
+        int pasos = (int) Math.round(tFinal / h) + 1;
+        double[][] solucion = new double[n][pasos];
+        double[] tiempo = new double[pasos];
+
         
+    }
 }
