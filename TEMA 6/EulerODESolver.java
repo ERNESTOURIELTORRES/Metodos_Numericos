@@ -96,7 +96,7 @@ public class EulerODESolver {
         for (int i = 0; i < pasos; i++) {
             System.out.printf("%.2f\t", tiempo[i]);
             for (int j = 0; j < n; j++) {
-                System.out.printf("%.6f\t", solucion[j][i]);
+                System.out.printf("%.6f\t ", solucion[j][i]);
             }
             System.out.println();
         }
