@@ -48,6 +48,10 @@ Función Interpolar(x0, y0, x1, y1, x):
     y ← y0 + m * (x − x0)
     Retornar y
 ```
+## Código 
+
+[Método Interpolación Lineal](InterpolacionLineal.java)
+
 
 ## Caso de Prueba
 
@@ -185,6 +189,11 @@ Función NewtonInterpolation(x[0..n], y[0..n], xEval):
     Retornar resultado
 ```
 
+
+## Código
+
+[Método de Interpolación Newton](NewtonInterpolation.java)
+
 ## Caso de Prueba
 
 x = [9, 12, 15]
@@ -281,6 +290,10 @@ Función CorrelaciónRegresión(X[1..n], Y[1..n]):
     Retornar (β0, β1, r)
 ```
 
+## Código
+
+[Correlación](Correlacion.java)
+
 ## Caso de Prueba
 
 |  i  |  $x_i$  |  $y_i$  |
@@ -356,6 +369,7 @@ El **método de mínimos cuadrados** es una técnica estadística que ajusta una
 ---
 
 ## Pasos a seguir
+
 1. **Reunir datos**  
    - Vectores x[1..n], y[1..n].  
 2. **Calcular sumatorias**  
@@ -400,6 +414,11 @@ Función AjusteLinealMinimosCuadrados(x[1..n], y[1..n]):
 
     Retornar (a, b)
 ```
+
+## Código 
+
+[Método Minimos Cuadrados](MinimosCuadrados.java)
+
 
 ## Caso de Prueba
 
